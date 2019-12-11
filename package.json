@@ -1,0 +1,23 @@
+{
+  "name": "evo-bio-audit",
+  "version": "1.0.0",
+  "description": "Supplementary material for Evo Bio Design Study",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/visdesignlab/evo-bio-audit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/visdesignlab/evo-bio-audit/issues"
+  },
+  "homepage": "https://github.com/visdesignlab/evo-bio-audit#readme",
+  "dependencies": {
+    "@citation-js/core": "^0.5.0-alpha.5",
+    "requirejs": "^2.3.6"
+  }
+}
