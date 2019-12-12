@@ -3,6 +3,7 @@ import * as d3 from 'd3';
 import { renderCitations } from './citationLoader';
 import { renderLaunch } from './landing';
 import { renderTimeline } from './timeline';
+import { renderSketchbook } from './sketchbook';
 
 export function addNav(){
 
@@ -12,6 +13,7 @@ export function addNav(){
     
     makeButton(buttonWrap, 'Timeline', renderTimeline);
     makeButton(buttonWrap, 'References', renderCitations); 
+    makeButton(buttonWrap, 'Sketchbook', renderSketchbook); 
 }
 
 function makeButton(div, text, callback){

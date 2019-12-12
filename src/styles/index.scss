@@ -63,6 +63,19 @@ body {
   margin-top: 20px;
 }
 
+.sketch{
+  width:90%;
+  height:auto;
+  display: block;
+  margin:auto;
+}
+
+.sketch-wrap{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 /**
 button CSS
 **/
