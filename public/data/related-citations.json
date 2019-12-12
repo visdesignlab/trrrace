@@ -1,0 +1,551 @@
+[
+	{
+		"id": "http://zotero.org/users/4985362/items/HZ2HD353",
+		"type": "article-journal",
+		"title": "Visualizing Dynamic Hierarchies in Graph Sequences",
+		"container-title": "IEEE Transactions on Visualization and Computer Graphics",
+		"page": "2343-2357",
+		"volume": "22",
+		"issue": "10",
+		"source": "DOI.org (Crossref)",
+		"abstract": "Graphs are used to model relations between objects, where these objects can be grouped hierarchically based on their connectivity. In many applications, the relations change over time and so does the hierarchical group structure. We developed a visualization technique that supports the analysis of the topology and the hierarchical group structure of a dynamic graph and the tracking of changes over time. Each graph of a sequence is visualized by an adjacency matrix, where the hierarchical group structure is encoded within the matrix using indentation and nested contours, complemented by icicle plots attached to the matrices. The density within and between subgroups of the hierarchy is represented within the matrices using a gray scale. To visualize changes, transitions and dissimilarities between the hierarchically structured graphs are shown using a ﬂow metaphor and color coding. The design of our visualization technique allows us to show more than one hierarchical group structure of the same graph by stacking the sequences, where hierarchy comparison is supported not only within but also between sequences. To improve the readability, we minimize the number of crossing curves within and between sequences based on a sorting algorithm that sweeps through the sequences of hierarchies.",
+		"URL": "http://ieeexplore.ieee.org/document/7352369/",
+		"DOI": "10.1109/TVCG.2015.2507595",
+		"ISSN": "1077-2626",
+		"journalAbbreviation": "IEEE Trans. Visual. Comput. Graphics",
+		"language": "en",
+		"author": [
+			{
+				"family": "Vehlow",
+				"given": "Corinna"
+			},
+			{
+				"family": "Beck",
+				"given": "Fabian"
+			},
+			{
+				"family": "Weiskopf",
+				"given": "Daniel"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2016",
+					10,
+					1
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2019",
+					6,
+					11
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/4985362/items/638XVM5V",
+		"type": "article-journal",
+		"title": "Parallel hierarchies: A visualization for cross-tabulating hierarchical categories",
+		"container-title": "Computers & Graphics",
+		"page": "1-17",
+		"volume": "76",
+		"source": "DOI.org (Crossref)",
+		"abstract": "The visualization of categorical datasets is an open ﬁeld of research. While a number of standard diagramming techniques exist to investigate data distributions across multiple properties, these are rarely geared to take advantage of additional data properties – either given or derived. As a result, the data display is not as expressive as it could be when incorporating these properties, and it misses out on the potential of leveraging these properties for the data’s interactive exploration. In this paper, we present the visualization technique Parallel Hierarchies that is speciﬁcally tailored to take hierarchical categorizations into account. With Parallel Hierarchies, it is possible to individually adjust the desired level of detail for each categorical data property through drill-down and roll-up operations. This enables the analyst to selectively change levels of detail as the data analysis progresses and new questions arise. We illustrate the utility of Parallel Hierarchies with a demographic and a biological use case, and we report on a qualitative user study evaluating this visualization technique in an industrial scenario.",
+		"URL": "https://linkinghub.elsevier.com/retrieve/pii/S0097849318301080",
+		"DOI": "10.1016/j.cag.2018.07.009",
+		"ISSN": "00978493",
+		"title-short": "Parallel hierarchies",
+		"journalAbbreviation": "Computers & Graphics",
+		"language": "en",
+		"author": [
+			{
+				"family": "Vosough",
+				"given": "Zana"
+			},
+			{
+				"family": "Hogräfer",
+				"given": "Marius"
+			},
+			{
+				"family": "Royer",
+				"given": "Loïc A."
+			},
+			{
+				"family": "Groh",
+				"given": "Rainer"
+			},
+			{
+				"family": "Schulz",
+				"given": "Hans-Jörg"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2018",
+					11
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2019",
+					6,
+					11
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/4985362/items/EACM2BQD",
+		"type": "article-journal",
+		"title": "A Survey of Multiple Tree Visualisation",
+		"container-title": "Information Visualization",
+		"page": "235-252",
+		"volume": "9",
+		"issue": "4",
+		"source": "DOI.org (Crossref)",
+		"abstract": "This article summarises the current state of research into multiple tree visualisations. It discusses the spectrum of current representation techniques used on single trees, pairs of trees and finally multiple trees, in order to identify which representations are best suited to particular tasks and to find gaps in the representation space, in which opportunities for future multiple tree visualisation research may exist. The application areas from where multiple tree data are derived are enumerated, and the distinct structures that multiple trees make in combination with each other and the effect on subsequent approaches to their visualisation are discussed, along with the basic high-level goals of existing multiple tree visualisations.",
+		"URL": "http://journals.sagepub.com/doi/10.1057/ivs.2009.29",
+		"DOI": "10.1057/ivs.2009.29",
+		"ISSN": "1473-8716, 1473-8724",
+		"journalAbbreviation": "Information Visualization",
+		"language": "en",
+		"author": [
+			{
+				"family": "Graham",
+				"given": "Martin"
+			},
+			{
+				"family": "Kennedy",
+				"given": "Jessie"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2010",
+					12
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2019",
+					6,
+					11
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/4985362/items/SW88CPJM",
+		"type": "article-journal",
+		"title": "Visualization of multiple alignments, phylogenies and gene family evolution",
+		"container-title": "Nature Methods",
+		"page": "S16-S25",
+		"volume": "7",
+		"issue": "S3",
+		"source": "DOI.org (Crossref)",
+		"URL": "http://www.nature.com/articles/nmeth.1434",
+		"DOI": "10.1038/nmeth.1434",
+		"ISSN": "1548-7091, 1548-7105",
+		"journalAbbreviation": "Nat Methods",
+		"language": "en",
+		"author": [
+			{
+				"family": "Procter",
+				"given": "James B"
+			},
+			{
+				"family": "Thompson",
+				"given": "Julie"
+			},
+			{
+				"family": "Letunic",
+				"given": "Ivica"
+			},
+			{
+				"family": "Creevey",
+				"given": "Chris"
+			},
+			{
+				"family": "Jossinet",
+				"given": "Fabrice"
+			},
+			{
+				"family": "Barton",
+				"given": "Geoffrey J"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2010",
+					3
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2019",
+					6,
+					11
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/4985362/items/9QP6AZ29",
+		"type": "article-journal",
+		"title": "CandidTree: Visualizing Structural Uncertainty in Similar Hierarchies",
+		"page": "14",
+		"source": "Zotero",
+		"abstract": "Most visualization systems fail to convey uncertainty within data. To provide a way to show uncertainty in similar hierarchies, we interpreted the differences between two tree structures as uncertainty. We developed a new interactive visualization system called CandidTree that merges two trees into one and visualizes two types of structural uncertainty: location and sub-tree structure uncertainty. We conducted a usability study to identify major usability issues and evaluate how our system works. Another qualitative user study was conducted to see if biologists, who regularly work with hierarchically organized names, are able to use CandidTree to complete tree-comparison tasks. We also assessed the “uncertainty” metric we used.",
+		"language": "en",
+		"author": [
+			{
+				"family": "Lee",
+				"given": "Bongshin"
+			},
+			{
+				"family": "Robertson",
+				"given": "George G"
+			},
+			{
+				"family": "Czerwinski",
+				"given": "Mary"
+			},
+			{
+				"family": "Parr",
+				"given": "Cynthia Sims"
+			}
+		]
+	},
+	{
+		"id": "http://zotero.org/users/4985362/items/VWZDXI83",
+		"type": "article-journal",
+		"title": "Evolview v2: an online visualization and management tool for customized and annotated phylogenetic trees",
+		"container-title": "Nucleic Acids Research",
+		"page": "W236-W241",
+		"volume": "44",
+		"issue": "W1",
+		"source": "DOI.org (Crossref)",
+		"abstract": "Evolview is an online visualization and management tool for customized and annotated phylogenetic trees. It allows users to visualize phylogenetic trees in various formats, customize the trees through built-in functions and user-supplied datasets and export the customization results to publication-ready ﬁgures. Its ‘dataset system’ contains not only the data to be visualized on the tree, but also ‘modiﬁers’ that control various aspects of the graphical annotation. Evolview is a single-page application (like Gmail); its carefully designed interface allows users to upload, visualize, manipulate and manage trees and datasets all in a single webpage. Developments since the last public release include a modern dataset editor with keyword highlighting functionality, seven newly added types of annotation datasets, collaboration support that allows users to share their trees and datasets and various improvements of the web interface and performance. In addition, we included eleven new ‘Demo’ trees to demonstrate the basic functionalities of Evolview, and ﬁve new ‘Showcase’ trees inspired by publications to showcase the power of Evolview in producing publication-ready ﬁgures. Evolview is freely available at: http://www.evolgenius.info/evolview/.",
+		"URL": "https://academic.oup.com/nar/article-lookup/doi/10.1093/nar/gkw370",
+		"DOI": "10.1093/nar/gkw370",
+		"ISSN": "0305-1048, 1362-4962",
+		"title-short": "Evolview v2",
+		"journalAbbreviation": "Nucleic Acids Res",
+		"language": "en",
+		"author": [
+			{
+				"family": "He",
+				"given": "Zilong"
+			},
+			{
+				"family": "Zhang",
+				"given": "Huangkai"
+			},
+			{
+				"family": "Gao",
+				"given": "Shenghan"
+			},
+			{
+				"family": "Lercher",
+				"given": "Martin J."
+			},
+			{
+				"family": "Chen",
+				"given": "Wei-Hua"
+			},
+			{
+				"family": "Hu",
+				"given": "Songnian"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2016",
+					7,
+					8
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2019",
+					6,
+					11
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/4985362/items/8REDB6TC",
+		"type": "article-journal",
+		"title": "Visual Analysis of Multivariate State Transition Graphs",
+		"container-title": "IEEE Transactions on Visualization and Computer Graphics",
+		"page": "685-692",
+		"volume": "12",
+		"issue": "5",
+		"source": "IEEE Xplore",
+		"abstract": "We present a new approach for the visual analysis of state transition graphs. We deal with multivariate graphs where a number of attributes are associated with every node. Our method provides an interactive attribute-based clustering facility. Clustering results in metric, hierarchical and relational data, represented in a single visualization. To visualize hierarchically structured quantitative data, we introduce a novel technique: the bar tree. We combine this with a node-link diagram to visualize the hierarchy and an arc diagram to visualize relational data. Our method enables the user to gain significant insight into large state transition graphs containing tens of thousands of nodes. We illustrate the effectiveness of our approach by applying it to a real-world use case. The graph we consider models the behavior of an industrial wafer stepper and contains 55 043 nodes and 289 443 edges",
+		"DOI": "10.1109/TVCG.2006.192",
+		"ISSN": "1077-2626",
+		"author": [
+			{
+				"family": "Pretorius",
+				"given": "A. J."
+			},
+			{
+				"family": "Wijk",
+				"given": "J. J. Van"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2006",
+					9
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/4985362/items/6CIN4RRK",
+		"type": "article-journal",
+		"title": "PhyloDet: a scalable visualization tool for mapping multiple traits to large evolutionary trees",
+		"container-title": "Bioinformatics",
+		"page": "2611-2612",
+		"volume": "25",
+		"issue": "19",
+		"source": "PubMed Central",
+		"abstract": "Summary: Evolutionary biologists are often interested in finding correlations among biological traits across a number of species, as such correlations may lead to testable hypotheses about the underlying function. Because some species are more closely related than others, computing and visualizing these correlations must be done in the context of the evolutionary tree that relates species. In this note, we introduce PhyloDet (short for PhyloDetective), an evolutionary tree visualization tool that enables biologists to visualize multiple traits mapped to the tree., Availability: http://research.microsoft.com/cue/phylodet/, Contact: bongshin@microsoft.com.",
+		"URL": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2752614/",
+		"DOI": "10.1093/bioinformatics/btp454",
+		"ISSN": "1367-4803",
+		"note": "PMID: 19633096\nPMCID: PMC2752614",
+		"title-short": "PhyloDet",
+		"journalAbbreviation": "Bioinformatics",
+		"author": [
+			{
+				"family": "Lee",
+				"given": "Bongshin"
+			},
+			{
+				"family": "Nachmanson",
+				"given": "Lev"
+			},
+			{
+				"family": "Robertson",
+				"given": "George"
+			},
+			{
+				"family": "Carlson",
+				"given": "Jonathan M."
+			},
+			{
+				"family": "Heckerman",
+				"given": "David"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2009",
+					10,
+					1
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2019",
+					6,
+					13
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/4985362/items/5MU4PTIM",
+		"type": "article-journal",
+		"title": "AQUAPONY: visualization and interpretation of phylogeographic information on phylogenetic trees",
+		"container-title": "Bioinformatics",
+		"page": "3163-3165",
+		"volume": "35",
+		"issue": "17",
+		"source": "DOI.org (Crossref)",
+		"abstract": "Motivation The visualization and interpretation of evolutionary spatiotemporal scenarios is broadly and increasingly used in infectious disease research, ecology, or agronomy. Using probabilistic frameworks, wellknown tools can infer from molecular data ancestral traits for internal nodes in a phylogeny, and numerous phylogenetic rendering tools can display such evolutionary trees. However, visualizing such ancestral information and its uncertainty on the tree remains tedious. For instance, ancestral nodes can be associated to several geographical annotations with close probabilities and thus, several migration or transmission scenarios exist.",
+		"URL": "https://academic.oup.com/bioinformatics/article/35/17/3163/5289326",
+		"DOI": "10.1093/bioinformatics/btz011",
+		"ISSN": "1367-4803, 1460-2059",
+		"title-short": "AQUAPONY",
+		"language": "en",
+		"author": [
+			{
+				"family": "Cazaux",
+				"given": "Bastien"
+			},
+			{
+				"family": "Castel",
+				"given": "Guillaume"
+			},
+			{
+				"family": "Rivals",
+				"given": "Eric"
+			}
+		],
+		"editor": [
+			{
+				"family": "Schwartz",
+				"given": "Russell"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2019",
+					9,
+					1
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2019",
+					12,
+					5
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/4985362/items/PPSPHIFG",
+		"type": "paper-conference",
+		"title": "Exploring hierarchical visualization designs using phylogenetic trees",
+		"publisher-place": "San Francisco, California, United States",
+		"page": "939709",
+		"source": "DOI.org (Crossref)",
+		"event": "IS&T/SPIE Electronic Imaging",
+		"event-place": "San Francisco, California, United States",
+		"abstract": "Ongoing research on information visualization has produced an ever-increasing number of visualization designs. Despite this activity, limited progress has been made in categorizing this large number of information visualizations. This makes understanding their common design features challenging, and obscures the yet unexplored areas of novel designs. With this work, we provide categorization from an evolutionary perspective, leveraging a computational model to represent evolutionary processes, the phylogenetic tree. The result — a phylogenetic tree of a design corpus of hierarchical visualizations — enables better understanding of the various design features of hierarchical information visualizations, and further illuminates the space in which the visualizations lie, through support for interactive clustering and novel design suggestions. We demonstrate these beneﬁts with our software system, where a corpus of two-dimensional hierarchical visualization designs is constructed into a phylogenetic tree. This software system supports visual interactive clustering and suggesting for novel designs; the latter capacity is also demonstrated via collaboration with an artist who sketched new designs using our system.",
+		"URL": "http://proceedings.spiedigitallibrary.org/proceeding.aspx?doi=10.1117/12.2078857",
+		"DOI": "10.1117/12.2078857",
+		"language": "en",
+		"editor": [
+			{
+				"family": "Kao",
+				"given": "David L."
+			},
+			{
+				"family": "Hao",
+				"given": "Ming C."
+			},
+			{
+				"family": "Livingston",
+				"given": "Mark A."
+			},
+			{
+				"family": "Wischgoll",
+				"given": "Thomas"
+			}
+		],
+		"author": [
+			{
+				"family": "Li",
+				"given": "Shaomeng"
+			},
+			{
+				"family": "Crouser",
+				"given": "R. Jordan"
+			},
+			{
+				"family": "Griffin",
+				"given": "Garth"
+			},
+			{
+				"family": "Gramazio",
+				"given": "Connor"
+			},
+			{
+				"family": "Schulz",
+				"given": "Hans-Jörg"
+			},
+			{
+				"family": "Childs",
+				"given": "Hank"
+			},
+			{
+				"family": "Chang",
+				"given": "Remco"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015",
+					2,
+					8
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2019",
+					12,
+					5
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/4985362/items/INXW5MAA",
+		"type": "article-journal",
+		"title": "Phylogenetic analyses: comparing species to infer adaptations and physiological mechanisms",
+		"container-title": "Comprehensive Physiology",
+		"page": "639-674",
+		"volume": "2",
+		"issue": "1",
+		"source": "PubMed",
+		"abstract": "Comparisons among species have been a standard tool in animal physiology to understand how organisms function and adapt to their surrounding environment. During the last two decades, conceptual and methodological advances from different fields, including evolutionary biology and systematics, have revolutionized the way comparative analyses are performed, resulting in the advent of modern phylogenetic statistical methods. This development stems from the realization that conventional analytical methods assume that observations are statistically independent, which is not the case for comparative data because species often resemble each other due to shared ancestry. By taking evolutionary history explicitly into consideration, phylogenetic statistical methods can account for the confounding effects of shared ancestry in interspecific comparisons, improving the reliability of standard approaches such as regressions or correlations in comparative analyses. Importantly, these methods have also enabled researchers to address entirely new evolutionary questions, such as the historical sequence of events that resulted in current patterns of form and function, which can only be studied with a phylogenetic perspective. Here, we provide an overview of phylogenetic approaches and their importance for studying the evolution of physiological processes and mechanisms. We discuss the conceptual framework underlying these methods, and explain when and how phylogenetic information should be employed. We then outline the difficulties and limitations inherent to comparative approaches and discuss potential problems researchers may encounter when designing a comparative study. These issues are illustrated with examples from the literature in which the incorporation of phylogenetic information has been useful, or even crucial, for inferences on how species evolve and adapt to their surrounding environment.",
+		"DOI": "10.1002/cphy.c100079",
+		"ISSN": "2040-4603",
+		"note": "PMID: 23728983",
+		"title-short": "Phylogenetic analyses",
+		"journalAbbreviation": "Compr Physiol",
+		"language": "eng",
+		"author": [
+			{
+				"family": "Rezende",
+				"given": "Enrico L."
+			},
+			{
+				"family": "Diniz-Filho",
+				"given": "José Alexandre F."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2012",
+					1
+				]
+			]
+		}
+	}
+]
