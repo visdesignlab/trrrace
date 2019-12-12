@@ -4,14 +4,12 @@ const Cite = require('citation-js');
 
 export function addCitations(fileName, wrapDiv, header){
 
-    wrapDiv.append('h3').text(header);
+    wrapDiv.append('h2').text(header);
 
     d3.json(fileName).then(citations=> {
 
         citations.forEach(cite => {
-    
             let citation= new Cite(cite);
-    
             let output = citation.format('bibliography', {
                 format: 'html',
                 template: 'apa',
@@ -34,5 +32,4 @@ export function renderCitations(){
     addCitations('public/data/domain-citations.json', wrapDomain, "Domain References");
     addCitations('public/data/process-citations.json', wrapProcess, "Process References");
     addCitations('public/data/related-citations.json', wrapRelated, "Related Work");
-
 }
