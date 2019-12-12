@@ -1,28 +1,17 @@
 import '../styles/index.scss';
 import * as d3 from 'd3';
-
-const Cite = require('citation-js');
-
-let bibJson = d3.json('public/data/2019_Phylogenies.json').then(citations=> {
-
-    citations.forEach(cite => {
-
-        let citation= new Cite(cite);
-
-        let output = citation.format('bibliography', {
-            format: 'html',
-            template: 'apa',
-            lang: 'en-US'
-          })
-        
-          console.log(output)
-        
-          d3.select('body').append('div').classed('citation', true).html(output);
-    })
+import { addCitations } from './citationLoader';
 
 
-})
-console.log(bibJson)
+
+
+let wrapDomain = d3.select('#main').append('div').classed('citation-wrap', true);
+let wrapProcess = d3.select('#main').append('div').classed('citation-wrap', true);
+let wrapRelated = d3.select('#main').append('div').classed('citation-wrap', true);
+
+addCitations('public/data/domain-citations.json', wrapDomain, "Domain References");
+addCitations('public/data/process-citations.json', wrapProcess, "Process References");
+addCitations('public/data/related-citations.json', wrapRelated, "Related Work");
 
 
 

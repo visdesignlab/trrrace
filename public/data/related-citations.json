@@ -146,108 +146,6 @@
 		}
 	},
 	{
-		"id": "http://zotero.org/users/4985362/items/78L9N3DG",
-		"type": "article-journal",
-		"title": "Why Do Phylogenomic Data Sets Yield Conflicting Trees? Data Type Influences the Avian Tree of Life more than Taxon Sampling",
-		"container-title": "Systematic Biology",
-		"page": "857-879",
-		"volume": "66",
-		"issue": "5",
-		"source": "DOI.org (Crossref)",
-		"URL": "http://academic.oup.com/sysbio/article/66/5/857/3091102/Why-Do-Phylogenomic-Data-Sets-Yield-Conflicting",
-		"DOI": "10.1093/sysbio/syx041",
-		"ISSN": "1063-5157, 1076-836X",
-		"title-short": "Why Do Phylogenomic Data Sets Yield Conflicting Trees?",
-		"language": "en",
-		"author": [
-			{
-				"family": "Reddy",
-				"given": "Sushma"
-			},
-			{
-				"family": "Kimball",
-				"given": "Rebecca T."
-			},
-			{
-				"family": "Pandey",
-				"given": "Akanksha"
-			},
-			{
-				"family": "Hosner",
-				"given": "Peter A."
-			},
-			{
-				"family": "Braun",
-				"given": "Michael J."
-			},
-			{
-				"family": "Hackett",
-				"given": "Shannon J."
-			},
-			{
-				"family": "Han",
-				"given": "Kin-Lan"
-			},
-			{
-				"family": "Harshman",
-				"given": "John"
-			},
-			{
-				"family": "Huddleston",
-				"given": "Christopher J."
-			},
-			{
-				"family": "Kingston",
-				"given": "Sarah"
-			},
-			{
-				"family": "Marks",
-				"given": "Ben D."
-			},
-			{
-				"family": "Miglia",
-				"given": "Kathleen J."
-			},
-			{
-				"family": "Moore",
-				"given": "William S."
-			},
-			{
-				"family": "Sheldon",
-				"given": "Frederick H."
-			},
-			{
-				"family": "Witt",
-				"given": "Christopher C."
-			},
-			{
-				"family": "Yuri",
-				"given": "Tamaki"
-			},
-			{
-				"family": "Braun",
-				"given": "Edward L."
-			}
-		],
-		"issued": {
-			"date-parts": [
-				[
-					"2017",
-					9
-				]
-			]
-		},
-		"accessed": {
-			"date-parts": [
-				[
-					"2019",
-					6,
-					11
-				]
-			]
-		}
-	},
-	{
 		"id": "http://zotero.org/users/4985362/items/SW88CPJM",
 		"type": "article-journal",
 		"title": "Visualization of multiple alignments, phylogenies and gene family evolution",
@@ -394,70 +292,6 @@
 		}
 	},
 	{
-		"id": "http://zotero.org/users/4985362/items/TVCCG8SS",
-		"type": "article-journal",
-		"title": "Arbor: Comparative Analysis Workflows for the Tree of Life",
-		"container-title": "PLoS Currents",
-		"source": "DOI.org (Crossref)",
-		"abstract": "We describe our efforts to develop a software package, Arbor, that will enable scientific research in all aspects of comparative biology. This software will enable developmental biologists, geneticists, ecologists, geographers, paleobiologists, educators, and students to analyze diverse types of comparative data at multiple phylogenetic and spatiotemporal scales using an intuitive visual interface. Arbor’s user­defined workflows will be exported and shared so that entire analyses can be quickly replicated with new or updated data. Arbor will also be designed to easily and seamlessly expand to include novel analytical tools as they are developed. Here we describe the core components of Arbor, as well as provide details of one proposed test case to illustrate the software’s key functionality.",
-		"URL": "http://currents.plos.org/treeoflife/index.html%3Fp=2343.html",
-		"DOI": "10.1371/currents.tol.099161de5eabdee073fd3d21a44518dc",
-		"ISSN": "2157-3999",
-		"title-short": "Arbor",
-		"journalAbbreviation": "PLoS Curr",
-		"language": "en",
-		"author": [
-			{
-				"family": "Harmon",
-				"given": "Luke J."
-			},
-			{
-				"family": "Baumes",
-				"given": "Jeffrey"
-			},
-			{
-				"family": "Hughes",
-				"given": "Charles"
-			},
-			{
-				"family": "Soberon",
-				"given": "Jorge"
-			},
-			{
-				"family": "Specht",
-				"given": "Chelsea D"
-			},
-			{
-				"family": "Turner",
-				"given": "Wesley"
-			},
-			{
-				"family": "Lisle",
-				"given": "Curtis"
-			},
-			{
-				"family": "Thacker",
-				"given": "Robert W."
-			}
-		],
-		"issued": {
-			"date-parts": [
-				[
-					"2013"
-				]
-			]
-		},
-		"accessed": {
-			"date-parts": [
-				[
-					"2019",
-					6,
-					11
-				]
-			]
-		}
-	},
-	{
 		"id": "http://zotero.org/users/4985362/items/8REDB6TC",
 		"type": "article-journal",
 		"title": "Visual Analysis of Multivariate State Transition Graphs",
@@ -484,50 +318,6 @@
 				[
 					"2006",
 					9
-				]
-			]
-		}
-	},
-	{
-		"id": "http://zotero.org/users/4985362/items/VKSMCRZV",
-		"type": "chapter",
-		"title": "Graphical Methods for Visualizing Comparative Data on Phylogenies",
-		"container-title": "Modern Phylogenetic Comparative Methods and Their Application in Evolutionary Biology",
-		"publisher": "Springer Berlin Heidelberg",
-		"publisher-place": "Berlin, Heidelberg",
-		"page": "77-103",
-		"source": "DOI.org (Crossref)",
-		"event-place": "Berlin, Heidelberg",
-		"abstract": "Phylogenies have emerged as central in evolutionary biology over the past three decades or more, and an extraordinary expansion in the breadth and sophistication of phylogenetic comparative methods has played a large role in this growth. In this chapter, I focus on a somewhat neglected area: the use of graphical methods to simultaneously represent comparative data and trees. As this research area is theoretically very broad, I have concentrated on new methods developed by me, or techniques devised by others and implemented by me as part of my R phylogenetics package, phytools. I describe a variety of methods in this chapter, including approaches that can be used to map reconstructed discrete or continuous character evolution on trees; techniques for projecting phylogenetic trees into morphospace; and methods for visualizing phylogenies in the context of a global or regional geographic map. In this chapter, my intention is not merely to showcase new methods that I have developed. Rather, I have also dedicated considerable attention to detailing the algorithms and computational techniques required for these approaches with the hope that this chapter will become a resource or jumping-off point for researchers interested in building new, more advanced approaches and methods in this area.",
-		"URL": "http://link.springer.com/10.1007/978-3-662-43550-2_4",
-		"ISBN": "978-3-662-43549-6",
-		"note": "DOI: 10.1007/978-3-662-43550-2_4",
-		"language": "en",
-		"editor": [
-			{
-				"family": "Garamszegi",
-				"given": "László Zsolt"
-			}
-		],
-		"author": [
-			{
-				"family": "Revell",
-				"given": "Liam J."
-			}
-		],
-		"issued": {
-			"date-parts": [
-				[
-					"2014"
-				]
-			]
-		},
-		"accessed": {
-			"date-parts": [
-				[
-					"2019",
-					6,
-					13
 				]
 			]
 		}
@@ -724,48 +514,36 @@
 		}
 	},
 	{
-		"id": "http://zotero.org/users/4985362/items/DNYRN6YL",
-		"type": "paper-conference",
-		"title": "Action Design Research and Visualization Design",
-		"container-title": "Proceedings of the Beyond Time and Errors on Novel Evaluation Methods for Visualization - BELIV '16",
-		"publisher": "ACM Press",
-		"publisher-place": "Baltimore, MD, USA",
-		"page": "10-18",
-		"source": "DOI.org (Crossref)",
-		"event": "the Beyond Time and Errors",
-		"event-place": "Baltimore, MD, USA",
-		"abstract": "In applied visualization research, artifacts are shaped by a series of small design decisions, many of which are evaluated quickly and informally via methods that often go unreported and unveriﬁed. Such design decisions are inﬂuenced not only by visualization theory, but also by the people and context of the research. While existing applied visualization models support a level of reliability throughout the design process, they fail to explicitly account for the inﬂuence of the research context in shaping the resulting design artifacts. In this work, we look to action design research (ADR) for insight into addressing this issue. In particular, ADR oﬀers a framework along with a set of guiding principles for navigating and capitalizing on the disruptive, subjective, human-centered nature of applied design work, while aiming to ensure reliability of the process and design, and emphasizing opportunities for conducting research. We explore the utility of ADR in increasing the reliability of applied visualization design research by: describing ADR in the language and constructs developed within the visualization community; comparing ADR to existing visualization methodologies; and analyzing a recent design study retrospectively through the lens of ADR’s framework and principles.",
-		"URL": "http://dl.acm.org/citation.cfm?doid=2993901.2993916",
-		"DOI": "10.1145/2993901.2993916",
-		"ISBN": "978-1-4503-4818-8",
-		"language": "en",
+		"id": "http://zotero.org/users/4985362/items/INXW5MAA",
+		"type": "article-journal",
+		"title": "Phylogenetic analyses: comparing species to infer adaptations and physiological mechanisms",
+		"container-title": "Comprehensive Physiology",
+		"page": "639-674",
+		"volume": "2",
+		"issue": "1",
+		"source": "PubMed",
+		"abstract": "Comparisons among species have been a standard tool in animal physiology to understand how organisms function and adapt to their surrounding environment. During the last two decades, conceptual and methodological advances from different fields, including evolutionary biology and systematics, have revolutionized the way comparative analyses are performed, resulting in the advent of modern phylogenetic statistical methods. This development stems from the realization that conventional analytical methods assume that observations are statistically independent, which is not the case for comparative data because species often resemble each other due to shared ancestry. By taking evolutionary history explicitly into consideration, phylogenetic statistical methods can account for the confounding effects of shared ancestry in interspecific comparisons, improving the reliability of standard approaches such as regressions or correlations in comparative analyses. Importantly, these methods have also enabled researchers to address entirely new evolutionary questions, such as the historical sequence of events that resulted in current patterns of form and function, which can only be studied with a phylogenetic perspective. Here, we provide an overview of phylogenetic approaches and their importance for studying the evolution of physiological processes and mechanisms. We discuss the conceptual framework underlying these methods, and explain when and how phylogenetic information should be employed. We then outline the difficulties and limitations inherent to comparative approaches and discuss potential problems researchers may encounter when designing a comparative study. These issues are illustrated with examples from the literature in which the incorporation of phylogenetic information has been useful, or even crucial, for inferences on how species evolve and adapt to their surrounding environment.",
+		"DOI": "10.1002/cphy.c100079",
+		"ISSN": "2040-4603",
+		"note": "PMID: 23728983",
+		"title-short": "Phylogenetic analyses",
+		"journalAbbreviation": "Compr Physiol",
+		"language": "eng",
 		"author": [
 			{
-				"family": "McCurdy",
-				"given": "Nina"
+				"family": "Rezende",
+				"given": "Enrico L."
 			},
 			{
-				"family": "Dykes",
-				"given": "Jason"
-			},
-			{
-				"family": "Meyer",
-				"given": "Miriah"
+				"family": "Diniz-Filho",
+				"given": "José Alexandre F."
 			}
 		],
 		"issued": {
 			"date-parts": [
 				[
-					"2016"
-				]
-			]
-		},
-		"accessed": {
-			"date-parts": [
-				[
-					"2019",
-					12,
-					6
+					"2012",
+					1
 				]
 			]
 		}
