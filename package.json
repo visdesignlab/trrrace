@@ -12,8 +12,8 @@
     "url": "git+https://github.com/visdesignlab/evo-bio-audit.git"
   },
   "keywords": [
-  "audit trail",
-  "design study"
+    "audit trail",
+    "design study"
   ],
   "author": "Jen",
   "license": "MIT",
@@ -48,6 +48,7 @@
     "@babel/polyfill": "^7.7.0",
     "citation-js": "^0.5.0-alpha.4",
     "core-js": "^3.4.8",
-    "d3": "^5.14.2"
+    "d3": "^5.14.2",
+    "d3-array": "^2.4.0"
   }
 }
