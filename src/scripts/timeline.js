@@ -16,7 +16,7 @@ export async function renderTimeline(){
         return m;
     })
 
-    let groupedData = Array.from(d3Array.group(mappedData, d => d.date));
+    let groupedData = Array.from(d3Array.group(mappedData, d => timeFormat(d.date)));
 
     let width = svg.node().getBoundingClientRect().width;
     let height = (data.length * 50) + 50;
@@ -37,27 +37,34 @@ export async function renderTimeline(){
     .style('stroke-width', '1px')
     .style('stroke', 'gray');
 
+    console.log('group', groupedData)
+
     let eventGroups = wrapGroup.selectAll('g.event').data(groupedData).join('g')
                     .classed('event', true)
                     .attr('transform', (d, i)=> {
-                        return `translate(${100}, ${timeScale(d[0])})`});
+                        return `translate(${100}, ${timeScale(d[1][0].date)})`});
 
-    let eventDots = eventGroups.selectAll('circle').data(d=> [d[1]]).join('circle').attr('r', 5);
+    let eventDots = eventGroups.selectAll('circle').data(d=> {
+        return [d]}).join('circle').attr('r', d=> {
+            console.log(d[1].length)
+            return (d[1].length) * 3;
+        });
 
     let eventLabels = eventGroups.selectAll('text.event-label').data(d=> [d]).join('text').classed('event-label', true)
-        .text(d=> d.Event)
-        .attr('x', 10)
-        .attr('y', 7)
+        .text(d=> {
+            console.log(d)
+            let string = '';
+            d[1].forEach((f, i, n)=> (i === n.length - 1)? (string = string.concat(f.Event)) : (string = string.concat(f.Event + ", ")))
+            return string})
+        .attr('x', 13)
+        .attr('y', d=> (((d[1].length) * 3) / 2))
         .style('font-size', '10px');
 
-    
-
     let dateLabels = eventGroups.selectAll('text.date').data(d=> [d]).join('text').classed('date', true)
-        .text(d=> timeFormat(d[0]))
-        .attr('x', -10)
-        .attr('y', 7)
+        .text(d=> d[0])
+        .attr('x', -13)
+        .attr('y', d=> (((d[1].length) * 3) / 2))
         .style('text-anchor', 'end')
         .style('font-size', '10px');
 
-    console.log(data)
-}
+    }
