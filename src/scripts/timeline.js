@@ -9,19 +9,42 @@ export async function renderTimeline(){
     let data = await d3.csv('public/data/timeline.csv');
     let timeFormat = d3.timeFormat("%m/%d/%Y");
 
+
+
     let mappedData = data.map(m=> {
-        
-       // m.date = timeFormat(new Date(m.Date_Range));
         m.date = new Date(m.Date_Range);
         return m;
     })
+    let colorKeeper = [
+        '#e74c3c',
+        '#884ea0',
+        '#e67e22',
+        '#85c1e9',
+        '#FFC300',
+        '#a3e4d7',
+        '#28B463',
+        '#3366ff'
+    ];
 
+    let tags = Array.from(new Set([...data].map(m=> m.tag1)))
+    .map((m, i)=> {
+        return {tag:m, color:colorKeeper[i]}
+    });
+
+
+    
     let groupedData = Array.from(d3Array.group(mappedData, d => timeFormat(d.date)));
 
     let width = svg.node().getBoundingClientRect().width;
-    let height = (data.length * 50) + 50;
+    let height = (mappedData.length * 50) + 50;
 
     svg.attr('height', height);
+
+    let labelWrap = svg.append('g').classed('label-wrap', true).attr('transform', `translate(${width / 2}, 10)`);
+    let tagLabel = labelWrap.selectAll('.tag-label').data(tags).join('g').classed('tag-label', true);
+    tagLabel.attr('transform', (d, i)=> `translate(${i*100}, 0)`)
+    tagLabel.append('rect').attr('width', 95).attr('height', 20).attr('fill', (d)=> d.color).attr('opacity', .6)
+    tagLabel.append('text').text(d=> d.tag).style('font-size', 10).attr('y', 12).attr('x', 3)
 
     let timeScale = d3.scaleTime()
     .domain([d3.min(mappedData.map(m=>m.date)), d3.max(mappedData.map(m=>m.date))])
@@ -37,8 +60,6 @@ export async function renderTimeline(){
     .style('stroke-width', '1px')
     .style('stroke', 'gray');
 
-    console.log('group', groupedData)
-
     let eventGroups = wrapGroup.selectAll('g.event').data(groupedData).join('g')
                     .classed('event', true)
                     .attr('transform', (d, i)=> {
@@ -46,25 +67,79 @@ export async function renderTimeline(){
 
     let eventDots = eventGroups.selectAll('circle').data(d=> {
         return [d]}).join('circle').attr('r', d=> {
-            console.log(d[1].length)
             return (d[1].length) * 3;
         });
 
-    let eventLabels = eventGroups.selectAll('text.event-label').data(d=> [d]).join('text').classed('event-label', true)
+    let eventSquares = eventGroups.selectAll('.event-sq').data(d=> d[1]).join('g').classed('event-sq', true);
+    eventSquares.attr('transform', (d, i)=> `translate(${13 + (i * 12)}, -5)`);
+    eventSquares.filter(f=> f.tag1 != 'sketch').append('a')
+    .attr("xlink:href", d=> {
+        return d.Drive_Link})
+
+    eventSquares.filter(f=> f.tag1 === 'presentation').append('a')
+    .attr("xlink:href", d=> {
+        return `public/assets/${d.Sketch_ID}.pdf`})
+    .append('rect').attr('width', 10).attr('height', 10).attr('fill', (d, i)=> tags.filter(f=> f.tag === d.tag1)[0].color).attr('opacity', 0.6);
+    eventSquares.filter(f=> f.tag1 === 'sketch').append('rect').attr('width', 10).attr('height', 10).attr('fill', (d, i)=> tags.filter(f=> f.tag === d.tag1)[0].color).attr('opacity', 0.6);
+   
+
+    eventSquares.on('mouseover', (d, i, n)=> {
+       
+        let tooltip = d3.select('#tooltip')
+        tooltip.style('opacity', 1);
+       
+        tooltip
+        .html(d.Event)
+        .style("left", (n[i].getBoundingClientRect().x) + "px")
+        .style("top", (n[i].getBoundingClientRect().top - 50) + "px")
+
+        let sidebox = d3.select('body').append('div').attr('id','sidebox');
+                 
+        if(d.tag1 === 'sketch'){
+
+            let sideboxSVG = sidebox.append('svg').style('width', '1100px')
+            .style('height', '600px');
+
+            let im = sideboxSVG.append("svg:image")
+            .classed('sketch', true);
+
+            im.style('width', '1200px')
+            .attr('y', 0)
+            .attr('x', 0)
+            .attr("xlink:href", `public/assets/${d.Sketch_ID}.png`);
+
+        }else{
+            sidebox.append('h3').text(`${d.Event} ${d.date}`)
+        }
+
+    }).on('mouseout', ()=> {
+        let tooltip = d3.select('#tooltip').style('opacity', 0);
+        d3.select('#sidebox').remove();
+      
+    });
+
+    
+
+    let eventLabels = eventGroups.selectAll('text.event-label').data(d=> [d]).join('text')
+        .classed('event-label', true)
         .text(d=> {
-            console.log(d)
             let string = '';
             d[1].forEach((f, i, n)=> (i === n.length - 1)? (string = string.concat(f.Event)) : (string = string.concat(f.Event + ", ")))
             return string})
-        .attr('x', 13)
-        .attr('y', d=> (((d[1].length) * 3) / 2))
-        .style('font-size', '10px');
+        .attr('x', d=> (11+(d[1].length * 13)))
+        .attr('y', 5)
+        .style('font-size', '10px')
+        .attr('fill', '#B2BABB');
 
     let dateLabels = eventGroups.selectAll('text.date').data(d=> [d]).join('text').classed('date', true)
         .text(d=> d[0])
         .attr('x', -13)
         .attr('y', d=> (((d[1].length) * 3) / 2))
         .style('text-anchor', 'end')
-        .style('font-size', '10px');
+        .style('font-size', '10px')
+        .attr('fill', '#5D6D7E');
+
+
+
 
     }

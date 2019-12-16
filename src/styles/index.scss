@@ -3,6 +3,11 @@ $body-color: rgb(93, 91, 107);
   margin:0;
 }
 
+a {
+  color: red;
+  text-decoration: none;
+}
+
 h1, h2, h3{
   font-family: 'Raleway';
 }
@@ -16,7 +21,6 @@ body {
 }
 
 #header{
- 
   background-color: rgb(236, 236, 236);
   height:100px;
   position: sticky;
@@ -33,6 +37,19 @@ body {
   grid-area: header;
   margin-left: 100px;
   cursor: pointer;
+}
+
+#sidebox{
+  position:fixed;
+  top:140px;
+  right:10px;
+  bottom:0;
+  pointer-events: none;
+}
+
+#sidebox svg{
+  width: 100%;
+  height: 100%;
 }
 
 .button-wrap{
@@ -81,9 +98,12 @@ body {
   justify-content: center;
 }
 
+.text-block{
+  width: 1000px;
+}
+
 .timeline{
   width:100%;
-
 }
 
 /**

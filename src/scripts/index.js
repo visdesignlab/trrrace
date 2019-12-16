@@ -10,12 +10,20 @@ import { renderTimeline } from './timeline';
  */
 addNav();
 
-
+          // create a tooltip
+var Tooltip = d3.select("#tooltip")
+          .style("opacity", 0)
+          .style("background-color", "white")
+          .style("border", "solid")
+          .style("border-width", "2px")
+          .style("border-radius", "5px")
+          .style("padding", "5px")
+          .style('position', 'absolute')
 /**
  * This is the References Section
  */
-//renderLaunch();
-renderTimeline();
+renderLaunch();
+//renderTimeline();
 
 
 
