@@ -35,7 +35,7 @@ export async function renderTimeline(){
     let groupedData = Array.from(d3Array.group(mappedData, d => timeFormat(d.date)));
 
     let width = svg.node().getBoundingClientRect().width;
-    let height = (mappedData.length * 50) + 50;
+    let height = (mappedData.length * 40) + 50;
 
     svg.attr('height', height);
 
@@ -49,17 +49,24 @@ export async function renderTimeline(){
     .domain([d3.min(mappedData.map(m=>m.date)), d3.max(mappedData.map(m=>m.date))])
     .range([0, (height-100)]).clamp(true);
 
+    let circleScale = d3.scaleLinear().domain([1, 15]).range([3, 10]);
+
     let rangeBox = svg.append('rect')
-    .attr('width', 630)
-    .attr('height', (timeScale(new Date(rangeInIdaho[1])) - timeScale(new Date(rangeInIdaho[0])) + 20))
-    .attr('y', timeScale(new Date(rangeInIdaho[0])) + 10)
-    .attr('x', 30)
-    .attr('fill', 'gray')
-    .attr('opacity', 0.1);
+        .attr('width', 630)
+        .attr('height', (timeScale(new Date(rangeInIdaho[1])) - timeScale(new Date(rangeInIdaho[0])) + 50))
+        .attr('y', timeScale(new Date(rangeInIdaho[0]))-20)
+        .attr('x', 30)
+        .attr('fill', 'gray')
+        .attr('opacity', 0.1);
+
+    let rangeLabel = svg.append('text').text('Working at Harmon Lab')
+                    .attr('y', timeScale(new Date(rangeInIdaho[0])) + 2)
+                    .attr('x', 120)
+                    .attr('fill', 'gray')
+                    .style('font-size', '11px')
+
 
     let wrapGroup = svg.append('g').classed('time-wrap', true).attr('transform', `translate(10, 20)`);
-
-  
 
     let timePath = wrapGroup.append('line')
     .attr('y1', 0)
@@ -76,21 +83,18 @@ export async function renderTimeline(){
 
     let eventDots = eventGroups.selectAll('circle').data(d=> {
         return [d]}).join('circle').attr('r', d=> {
-            return (d[1].length) * 3;
+            return circleScale(d[1].length);
         });
 
     let eventSquares = eventGroups.selectAll('.event-sq').data(d=> d[1]).join('g').classed('event-sq', true);
     eventSquares.attr('transform', (d, i)=> `translate(${13 + (i * 12)}, -5)`);
 
-    eventSquares.filter(f=> f.tag1 != 'sketch').append('a')
+    let aDrive = eventSquares.filter(f=> f.tag1 != 'sketch' && f.tag1 != 'presentation').append('a')
     .attr("xlink:href", d=> {
         return d.Drive_Link});
+    aDrive.append('rect').attr('width', 10).attr('height', 10).attr('fill', (d, i)=> tags
+        .filter(f=> f.tag === d.tag1)[0].color).attr('opacity', 0.6);
 
-    eventSquares.filter(f=> f.tag1 === 'presentation').append('a')
-    .attr("xlink:href", d=> {
-        return `public/assets/${d.Sketch_ID}.pdf`})
-    eventSquares.append('rect').attr('width', 10).attr('height', 10).attr('fill', (d, i)=> tags
-    .filter(f=> f.tag === d.tag1)[0].color).attr('opacity', 0.6);
     eventSquares.filter(f=> f.tag1 === 'sketch').append('rect')
     .attr('width', 10).attr('height', 10)
     .attr('fill', (d, i)=> tags.filter(f=> f.tag === d.tag1)[0].color)
@@ -129,6 +133,11 @@ export async function renderTimeline(){
         let tooltip = d3.select('#tooltip').style('opacity', 0);
         d3.select('#sidebox').remove();
     });
+
+    eventSquares.filter(f=> f.tag1 === 'presentation').append('a')
+    .attr("xlink:href", d=> {
+        return `public/assets/${d.Sketch_ID}.pdf`}).append('rect').attr('width', 10).attr('height', 10).attr('fill', (d, i)=> tags
+        .filter(f=> f.tag === d.tag1)[0].color).attr('opacity', 0.6);
 
     let eventLabels = eventGroups.selectAll('text.event-label').data(d=> [d]).join('text')
         .classed('event-label', true)
