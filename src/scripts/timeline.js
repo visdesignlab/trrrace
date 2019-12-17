@@ -22,8 +22,7 @@ export async function renderTimeline(){
         '#85c1e9',
         '#FFC300',
         '#a3e4d7',
-        '#28B463',
-        '#3366ff'
+        '#28B463'
     ];
 
     let tags = Array.from(new Set([...data].map(m=> m.tag1)))
@@ -31,8 +30,8 @@ export async function renderTimeline(){
         return {tag:m, color:colorKeeper[i]}
     });
 
+    console.log('tags', tags);
 
-    
     let groupedData = Array.from(d3Array.group(mappedData, d => timeFormat(d.date)));
 
     let width = svg.node().getBoundingClientRect().width;
@@ -48,7 +47,7 @@ export async function renderTimeline(){
 
     let timeScale = d3.scaleTime()
     .domain([d3.min(mappedData.map(m=>m.date)), d3.max(mappedData.map(m=>m.date))])
-    .range([0, (height-100)]).clamp(true)
+    .range([0, (height-100)]).clamp(true);
 
     let wrapGroup = svg.append('g').classed('time-wrap', true).attr('transform', `translate(10, 20)`);
 
@@ -72,17 +71,21 @@ export async function renderTimeline(){
 
     let eventSquares = eventGroups.selectAll('.event-sq').data(d=> d[1]).join('g').classed('event-sq', true);
     eventSquares.attr('transform', (d, i)=> `translate(${13 + (i * 12)}, -5)`);
+
     eventSquares.filter(f=> f.tag1 != 'sketch').append('a')
     .attr("xlink:href", d=> {
-        return d.Drive_Link})
+        return d.Drive_Link});
 
     eventSquares.filter(f=> f.tag1 === 'presentation').append('a')
     .attr("xlink:href", d=> {
         return `public/assets/${d.Sketch_ID}.pdf`})
-    .append('rect').attr('width', 10).attr('height', 10).attr('fill', (d, i)=> tags.filter(f=> f.tag === d.tag1)[0].color).attr('opacity', 0.6);
-    eventSquares.filter(f=> f.tag1 === 'sketch').append('rect').attr('width', 10).attr('height', 10).attr('fill', (d, i)=> tags.filter(f=> f.tag === d.tag1)[0].color).attr('opacity', 0.6);
+    eventSquares.append('rect').attr('width', 10).attr('height', 10).attr('fill', (d, i)=> tags
+    .filter(f=> f.tag === d.tag1)[0].color).attr('opacity', 0.6);
+    eventSquares.filter(f=> f.tag1 === 'sketch').append('rect')
+    .attr('width', 10).attr('height', 10)
+    .attr('fill', (d, i)=> tags.filter(f=> f.tag === d.tag1)[0].color)
+    .attr('opacity', 0.6);
    
-
     eventSquares.on('mouseover', (d, i, n)=> {
        
         let tooltip = d3.select('#tooltip')
@@ -115,10 +118,7 @@ export async function renderTimeline(){
     }).on('mouseout', ()=> {
         let tooltip = d3.select('#tooltip').style('opacity', 0);
         d3.select('#sidebox').remove();
-      
     });
-
-    
 
     let eventLabels = eventGroups.selectAll('text.event-label').data(d=> [d]).join('text')
         .classed('event-label', true)
@@ -138,8 +138,4 @@ export async function renderTimeline(){
         .style('text-anchor', 'end')
         .style('font-size', '10px')
         .attr('fill', '#5D6D7E');
-
-
-
-
     }
