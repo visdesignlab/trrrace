@@ -25,12 +25,12 @@ export async function renderTimeline(){
         '#28B463'
     ];
 
+    let rangeInIdaho = ['05-13-19', '07-31-19'];
+
     let tags = Array.from(new Set([...data].map(m=> m.tag1)))
     .map((m, i)=> {
         return {tag:m, color:colorKeeper[i]}
     });
-
-    console.log('tags', tags);
 
     let groupedData = Array.from(d3Array.group(mappedData, d => timeFormat(d.date)));
 
@@ -49,7 +49,17 @@ export async function renderTimeline(){
     .domain([d3.min(mappedData.map(m=>m.date)), d3.max(mappedData.map(m=>m.date))])
     .range([0, (height-100)]).clamp(true);
 
+    let rangeBox = svg.append('rect')
+    .attr('width', 630)
+    .attr('height', (timeScale(new Date(rangeInIdaho[1])) - timeScale(new Date(rangeInIdaho[0])) + 20))
+    .attr('y', timeScale(new Date(rangeInIdaho[0])) + 10)
+    .attr('x', 30)
+    .attr('fill', 'gray')
+    .attr('opacity', 0.1);
+
     let wrapGroup = svg.append('g').classed('time-wrap', true).attr('transform', `translate(10, 20)`);
+
+  
 
     let timePath = wrapGroup.append('line')
     .attr('y1', 0)
