@@ -111,8 +111,13 @@ export async function renderTimeline(){
         .style("top", (n[i].getBoundingClientRect().top - 50) + "px")
 
         let sidebox = d3.select('body').append('div').attr('id','sidebox');
+
+        sidebox.append('h3').text(`${d.Event} ${d.date}`)
+        sidebox.append('h3').text("Tags: ")
+        sidebox.append('h3').text(`${d.tag1}, ${d.tag2}, ${d.tag3}`)
+       
                  
-        if(d.tag1 === 'sketch'){
+        if(d.tag1 === 'sketch' || d.tag1 === 'pivot'){
 
             let sideboxSVG = sidebox.append('svg').style('width', '1100px')
             .style('height', '600px');
@@ -126,7 +131,7 @@ export async function renderTimeline(){
             .attr("xlink:href", `public/assets/${d.Sketch_ID}.png`);
 
         }else{
-            sidebox.append('h3').text(`${d.Event} ${d.date}`)
+           
         }
 
     }).on('mouseout', ()=> {
@@ -136,7 +141,10 @@ export async function renderTimeline(){
 
     eventSquares.filter(f=> f.tag1 === 'presentation').append('a')
     .attr("xlink:href", d=> {
-        return `public/assets/${d.Sketch_ID}.pdf`}).append('rect').attr('width', 10).attr('height', 10).attr('fill', (d, i)=> tags
+        return `public/assets/${d.Sketch_ID}.pdf`}).append('rect')
+        .attr('width', 10)
+        .attr('height', 10)
+        .attr('fill', (d, i)=> tags
         .filter(f=> f.tag === d.tag1)[0].color).attr('opacity', 0.6);
 
     let eventLabels = eventGroups.selectAll('text.event-label').data(d=> [d]).join('text')
