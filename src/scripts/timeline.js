@@ -22,7 +22,8 @@ export async function renderTimeline(){
         '#85c1e9',
         '#FFC300',
         '#a3e4d7',
-        '#28B463'
+        '#28B463',
+        '#5D6D7E'
     ];
 
     let rangeInIdaho = ['05-13-19', '07-31-19'];
@@ -89,13 +90,14 @@ export async function renderTimeline(){
     let eventSquares = eventGroups.selectAll('.event-sq').data(d=> d[1]).join('g').classed('event-sq', true);
     eventSquares.attr('transform', (d, i)=> `translate(${13 + (i * 12)}, -5)`);
 
-    let aDrive = eventSquares.filter(f=> f.tag1 != 'sketch' && f.tag1 != 'presentation').append('a')
+    let aDrive = eventSquares
+    .filter(f=> f.tag1 != 'sketch' && f.tag1 != 'presentation' && f.tag1 != 'pivot' && f.tag1 != 'view').append('a')
     .attr("xlink:href", d=> {
         return d.Drive_Link});
     aDrive.append('rect').attr('width', 10).attr('height', 10).attr('fill', (d, i)=> tags
         .filter(f=> f.tag === d.tag1)[0].color).attr('opacity', 0.6);
 
-    eventSquares.filter(f=> f.tag1 === 'sketch').append('rect')
+    eventSquares.filter(f=> f.tag1 === 'sketch' || f.tag1 === 'view' || f.tag1 === 'pivot').append('rect')
     .attr('width', 10).attr('height', 10)
     .attr('fill', (d, i)=> tags.filter(f=> f.tag === d.tag1)[0].color)
     .attr('opacity', 0.6);
@@ -117,7 +119,7 @@ export async function renderTimeline(){
         sidebox.append('h3').text(`${d.tag1}, ${d.tag2}, ${d.tag3}`)
        
                  
-        if(d.tag1 === 'sketch' || d.tag1 === 'pivot'){
+        if(d.tag1 === 'sketch' || d.tag1 === 'pivot' || d.tag1 === 'view'){
 
             let sideboxSVG = sidebox.append('svg').style('width', '1100px')
             .style('height', '600px');
@@ -130,8 +132,20 @@ export async function renderTimeline(){
             .attr('x', 0)
             .attr("xlink:href", `public/assets/${d.Sketch_ID}.png`);
 
-        }else{
+        }else if(d.tag1 === 'moving-update'){
            
+            let sideboxSVG = sidebox.append('svg').style('width', '1100px')
+            .style('height', '600px');
+
+            let im = sideboxSVG.append("svg:image")
+            .classed('sketch', true);
+
+            im.style('width', '900px')
+            .attr('y', 0)
+            .attr('x', 0)
+            .attr("xlink:href", `public/assets/${d.Sketch_ID}.gif`);
+        }else{
+
         }
 
     }).on('mouseout', ()=> {
