@@ -1,103 +1,104 @@
-Date_Range,Event,Drive_Link,Sketch_ID,tag1,tag2,tag3
-4-22-2019,Meeting with Nina,https://drive.google.com/open?id=11f4M0OBNn6iVVJDdRlD02bl_P95ZZaA7hrFztzrWVbs,nul,interview,design studies,planning
-5-13-2019,Initial Meeting with Luke Harmon,https://drive.google.com/open?id=1OvAVJXsegxNM2Xvnb3lU8AsHakMuFHdhyRItM0xqgzc,null,interview,,
-5-13-19,Initial Meeting with Jack Sullivan,https://drive.google.com/open?id=1winfsk4ORhTds1TguChMMIrfymUzqmmeZMtv5Ri1pbw,null,interview,chipmunks,
-5-13-2019,Initial Meeting with Hector,https://drive.google.com/open?id=1CBBHdz9svVDxuBsbWJe2QYV-nSg30liubZhjDziEfIU,null,interview,domain vis,
-5-13-19,Sketchbook,null,513,sketch,,
-5-14-19,Initial Meeting with Austin Patton,https://drive.google.com/open?id=1agn4K45aC6LomGCJmXPdHWe-DZVzjnq9VTp69WAemU0,null,interview,convergence,
-5-14-19,Initial meeting with Megan,https://drive.google.com/open?id=1V0W_GdxWRZ96m3bIr4k8De8GYftjsB8AwDin61k-DQ4,null,interview,summary stats,
-5-14-19,Initial Meeting with Larry,https://drive.google.com/open?id=116-es5empavSvVF9SHWaYdoQNnsvn96b0886jXkiiYM,null,interview,meta,
-5-15-2019,Sketchbook,null,515,sketch,,
-5-17-2019,Examples of Work from Lab,https://docs.google.com/document/d/1oEC_gF1BQO5GhXQA1Dp-H1__9H2gH9M9Zf7EKlzt8t0/edit?usp=sharing,null,domain,context,
-5-17-2019,Initial Interview with Eva Top,https://drive.google.com/open?id=12nuvZ0_WnLUQffpXBif1ODW9VrvVPmN4YMo7G2_tihs,null,interview,genetics,
-5-17-19,Gave Presentation to Group,https://drive.google.com/open?id=1COrWdnRfjF5_dIBfxMzYvTuAF0FDzNpn-xt7EB_VFZY,null,presentation,expectations,
-5-18-19,Domain Visual Examples,https://docs.google.com/document/d/1O4loLJ_0pC15BFk7DFY2KBeMwNQpQ2MLyiYUPt2kJVM/edit?usp=sharing,null,domain,context,
-5-20-19,Initial Meeting with Thibault,https://drive.google.com/open?id=1Xq86TZWGonHhIYUfjFA1zbz72FGB97EzRfLfCAx5aBM,null,interview,matrices,
-5-20-19,Initial Meeting with Amanda,https://drive.google.com/open?id=1O4mIrjueQv25sHhet89g_FFhybYQ43aYTpSE1yMuYcM,null,interview,pca,
-5-21-19,Planning Creativity Workshop,https://drive.google.com/open?id=1aiCMLIgkqc0S0sceUwUIt1OGoLZU9rqGCJE3vn0pRTI,null,brainstorm,,
-5-21-19,Started uncertainty example collection,https://docs.google.com/document/d/1nA6SKN71eC7d0TBRI-3LmLKXym7HBffv4fJpBosevkw/edit?usp=sharing,null,domain,context,
-5-21-19,Visit Maren's Lab at WSU,https://drive.google.com/open?id=1LDHrj29JDMha6CVq4QdC6MYKvQrppeunw79qm93Vngw,null,presentation,interview,
-5-22-19,Meet with Roni to Discuss Multinet,https://drive.google.com/open?id=1X-Qt-K5uOsnZTsf4eCm2wgyqw3yUbYb_q7hzL03ckts,null,brainstorm,assesment,
-5-22-19,Sketch Brainstorm Ideas,https://drive.google.com/open?id=19WhXqPs9Plo2tDmPzquWfFxfINy2Zcd4abUgO1cMgPs,null,brainstorm,,
-5-24-19,,null,work1,workshop,documentation,sketch
-5-24-19,,null,work2,workshop,documentation,sketch
-5-24-19,,null,work3,workshop,documentation,sketch
-5-24-19,,null,work4,workshop,documentation,sketch
-5-24-19,,null,work5,workshop,documentation,sketch
-5-24-19,,null,work6,workshop,documentation,sketch
-5-24-19,,null,work7,workshop,documentation,sketch
-5-24-19,,null,work8,workshop,documentation,sketch
-5-24-19,,null,work9,workshop,documentation,sketch
-5-24-19,,null,work10,workshop,documentation,sketch
-5-24-19,,null,work11,workshop,documentation,sketch
-5-24-19,,null,work12,workshop,documentation,sketch
-5-24-19,,null,work13,workshop,documentation,sketch
-5-24-19,Workshop Notes,https://drive.google.com/open?id=1qZkIZzwFfdkR5Ok7EOUawomJOa_ejXtcHHo_SpBKgB4,null,brainstorm,interview,
-5-27-19,Summarized Needs from Workshop,https://drive.google.com/open?id=13aJrHNAsp5tFBLYEnXEE_3XIIlB13cwhbEOOtF5W9oY,null,brainstorm,analysis,
-5-28-19,Sketchbook,null,528,sketch,brainstorm,
-5-29-19,Skype with James and Luke,https://drive.google.com/open?id=1BjxRa-8FrnfzE_esX2lvaNdDwlLTPYGgmPmU6xmNtKI,null,interview,collaboration,
-5-29-19,Meeting with Luke,https://drive.google.com/open?id=1sJaAYnN5YK26hbNBHmXzHAKXK5J2vNpMbFIrgDpwYGQ,null,domain,technology gap,
-5-29-19,Sketchbook,null,529,sketch,brainstorm,
-5-30-19,Draft Initial Requirements Document,https://drive.google.com/open?id=1uRb4cVgZUyC01McvBjhV_7fEbis2bcCD7bmwshlNUCY,null,brainstorm,analysis,
-5-30-19,Sketchbook,null,530,sketch,brainstorm,
-5-31-19,Sketching Tool Features,https://drive.google.com/open?id=1jjTZkVTfjl-mfFX1HJ5hiGrXWJBPb4BMgEHzFjY7z14,null,brainstorm,,
-5-31-19,Sketchbook,null,531,sketch,brainstorm,
-6-1-19,Sketchbook,null,601,sketch,brainstorm,
-6-3-19,Familiarizing Myself with the Domain Analysis workflow,https://drive.google.com/open?id=1lXoM4dGVmC60g5U62QqVYzbceGXRa2bbKkJk0w2i7vg,null,domain,,
-6-5-19,Second Meeting with Daniel,https://docs.google.com/document/d/15TUE8RSdpjZQUhMG-0S-onVOwwtfH5uZT8ptzvjFaok/edit?usp=sharing,null,interview,,
-6-6-19,Status check on progress with Roni and Curt,https://drive.google.com/open?id=1gdqZy0Z8oSRcBZ4AyPZRsRtTNHjslcz1-2RR2eKvAuM,null,meeting/assesment,,
-6-7-19,Familiarizing myself with Arbor Workflows,https://drive.google.com/open?id=1BUnjkyo1p0fEQfchYcuiwSD8USkkwMoejBe6EknrXcg,null,domain,,
-6-10-19,Multinet Tech Meeting,https://drive.google.com/open?id=1XDNn6thxyKS-ocer1rzlFA543Oaub4BhModeetYPo9o,null,meeting/assesment,,
-6-10-19,Sketchbook,null,610,sketch,brainstorm,
-6-12-19,Second Meeting with Austin,https://drive.google.com/open?id=1w7tCBBnGNl0Zyc11NsgHNUzSXukqJoF5e_BiSoD5n0U,null,interview,,
-6-13-19,Taking Notes on Ancestral State Reconstruction,https://drive.google.com/open?id=1V1YiV3uttmLNer67f9avvjpEan9rFfSaBQTc0D2CbEw,null,domain,,
-6-13-19,Sketchbook,null,613,sketch,brainstorm,
-6-14-19,Second Meeting with Hector,https://drive.google.com/open?id=1mkg2QMYs5hRDwqtPOSiCqIdPnBU-7QLlH59rG3x6v7E,null,interview,domain feedback,
-6-18-19,Meeting with Alex,https://drive.google.com/open?id=1O2zleJggoOQwtPoPh_sllkMJgRnNRY6TGYVSRdlDw8o,null,meeting/assesment,,
-6-21-19,Update on Path Design ,null,mockup-621,sketch,mockup,
-7-5-19,Sketchbook,null,705,sketch,brainstorm,
-7-9-19,Sketchbook,null,709,sketch,brainstorm,
-7-16-19,Meeting with Alex,https://drive.google.com/open?id=13W4jlH9kbzytetqBa9yyp-iuX96yWiD5gKYp8QImCw8,null,meeting/assesment,,
-7-16-19,Sketchbook,null,716,sketch,brainstorm,
-7-17-19,Third Meeting with Austin,https://drive.google.com/open?id=1i3xp4Yuqj9kGYHguLh1V4j4eD_rRrBd3l8nIikxRB-c,null,domain,,
-7-22-19,Update of Sidebar Tree,null,view-722,view,design,iteration
-7-23-19,Meeting with Luke,https://drive.google.com/open?id=1gcSln3J_KnTelW-YikR9qgJEAW7emIzvZRm8VyX5MUc,null,domain,,
-7-25-19,Development of Summary View,null,view-725B,view,design ,iteration
-7-25-19,Update on sort functionality,null,view-725,view,functionality ,
-7-29-19,Sketchbook,null,729,sketch,,
-7-30-19,Sketchbook,null,730,sketch,,
-7-31-19,Sketchbook,null,731,sketch,,
-8-7-19,Assesement of Development and Requirements,https://drive.google.com/open?id=1azshy7pwt0sfBn8nbFlisezLPlCyMysUvZZvAXMLyfo,null,brainstorm,,
-8-8-19,Update of Summary View,null,view-808,view,design,iteration
-8-8-19,Notes:List of relevant vis,https://docs.google.com/document/d/1LQ1k7yGkITcrDQMgg7yMQ5v6i19rS6M8x9wJvCAO10Q/edit?usp=sharing,null,brainstorm,,
-8-15-19,Sketchbook,null,815,sketch,,
-8-20-19,Meeting with Alex and Miriah,https://drive.google.com/open?id=1JkN6DvnHuO6iYSyCOpdoqoltxfyaVmdulkWoNqjQAiE,null,meeting/assesment,,
-8-22-19,Re-revisit Requirements,https://docs.google.com/document/d/1POBCPCq4Wd3mCU6Kc3kCM_8f2J5bEA6j1PvRnJLLVNg/edit?usp=sharing,null,domain,,
-8-23-19,Sketchbook,null,823,sketch,,
-8-26-19,sketchbook,null,826,sketch,,
-8-28-19,Meeting with Luke,https://drive.google.com/open?id=1jaM6MeVjKVAU4n0syZjqVdNLlyZJDZSFeJ9Lris6v2A,null,domain,pivot,
-8-30-19,Sketchbook,null,830,sketch,,
-9-2-19,Second Meeting with Megan,null,,domain,,
-9-3-19,Sketchbook,null,903,sketch,,
-9-4-19,Sketchbook,null,904,sketch,,
-9-6-19,Meeting with Alex and Miriah Go Over Process,keynote,process,presentation,meeting/assesment,
-9-13-19,Meeting with Alex and Miriah Go Over Process,keynote,process,presentation,meeting/assesment,
-9-19-19,Breaking Down the Domain Problem Notes,https://docs.google.com/document/d/1hysqIomZWDtNGCCIPsw-62Wj5VuTM9zQloiIoQOmb9Q/edit?usp=sharing,null,domain,analysis,
-10-4-19,Meeting with Alex and Miriah,https://docs.google.com/document/d/1BRsEtgopjhlhakeWJwbaxrKua0iFwx2ZCwC5PRKgVD8/edit?usp=sharing,null,meeting/assesment,abstraction,
-10-18-19,Meeting with Luke to Talk about Convergence,https://drive.google.com/open?id=1-D27IjjHpUXJtsR6QWz_pwu7dlnFdMTcEgsIop0UzNY,null,domain,clarification,
-10-18-19,Showed Austin the group functionality to identify convergence,null,group-view,view,pivot,
-10-18-19,Meeting with Austin at U of I,https://docs.google.com/document/d/16Zz5V8qwpioB582QSTjYfHqSY8Be3MNhsE5imhS40R8/edit?usp=sharing,null,meeting/assesment,brainstorming,pivot
-10-18-19,Whiteboard Sketch from Discussion,null,1018-photo,sketch,brainstorming,from collaborator
-10-21-19,Sketchbook,null,1021,sketch,brainstorming,
-10-31-19,Update of Ranked View,null,pheno-example,moving-update,iteration,functionality
-11-01-19,Sketchbook,null,1101,sketch,brainstorming,
-11-04-19,Meeting with Luke and Alex,null,null,meeting/assesment,clarification,
-11-08-19,Changed Discrete Summary,null,view-1108,view,iteration,
-11-08-19,Meeting with Alex and Miriah,https://docs.google.com/document/d/1HlSERPWpAUZ66qXOPfqKMCjdfQTTGeXY_33IXk5260c/edit?usp=sharing,null,meeting/assesment,storyline,contribution
-11-15-19,Meeting with Alex and Miriah,https://docs.google.com/document/d/164yad8Dfb6j4Xr6oFD4_IsvjFh3U8NzzhKXXd_IhuXY/edit?usp=sharing,null ,meeting/assesment,brainstorming,
-11-22-19,Meeting with Alex and Miriah,https://docs.google.com/document/d/1XQx54__V75BoxlbUPAn3ZgeT62sLIhUWqmWkWf23c9c/edit?usp=sharing,null,meeting/assesment,,
-12-02-19,Notes on Tree Topology,https://docs.google.com/document/d/1PFNrVBxkLiKqikxkR4V0MOC4lxoH-5Kye9FWFNaA4Qw/edit?usp=sharing,null,domain,,
-12-05-19,Sketchbook,null,1205,sketch,,
-12-10-19,Revisited descrete summary view,null,view-1210,view,,
-12-11-19,Sent out emails to get datasets from 4 other labs in Utah,https://docs.google.com/document/d/1NndOC1sUSpBnO1jVdpJVa1XwbgYmshqIkaPDd5U5u1A/edit?usp=sharing,null,correspondance,,
-12-11-19,"Brainstormed names, made sample logo",null,Flux-Logo,sketch,,
+Date_Range,Event,embed_link,Drive_Link,Sketch_ID,tag1,tag2,tag3
+4-22-2019,Meeting with Nina,https://docs.google.com/document/d/e/2PACX-1vRZ1JdLryYTglj40AdmQenil4n2xw6pj-z5dC2SLAY738p1a-dACPuq0GUHjhd-1JwVUm2Bw-Enm1QX/pub?embedded=true,https://drive.google.com/open?id=11f4M0OBNn6iVVJDdRlD02bl_P95ZZaA7hrFztzrWVbs,nul,interview,design studies,planning
+5-13-2019,Initial Meeting with Luke Harmon,https://docs.google.com/document/d/e/2PACX-1vQ0JcDIF5dhuMJc4QI3UpxSpbalU9lBZtY5T7Q_iHyDfaQ8l8lRJ7r5xS_GJaG-Dv4UUxh5qFRqsHHw/pub?embedded=true,https://drive.google.com/open?id=1OvAVJXsegxNM2Xvnb3lU8AsHakMuFHdhyRItM0xqgzc,null,interview,,
+5-13-19,Initial Meeting with Jack Sullivan,https://docs.google.com/document/d/e/2PACX-1vR9i0SKYt4CDlqpc03cesXY1VbTQe1q9tXOz3vo8NG2nbo712oBM0TXCIjKlEhxA5PEYia5CkbjJeIo/pub?embedded=true,https://drive.google.com/open?id=1winfsk4ORhTds1TguChMMIrfymUzqmmeZMtv5Ri1pbw,null,interview,chipmunks,
+5-13-2019,Initial Meeting with Hector,https://docs.google.com/document/d/e/2PACX-1vRO08XDTwAZRkoLsWlebJexA6_2NV5FzJ87Fsix8Gs3iBWku8h-9Vb1TJSJu5bTQzXYFayb-Lj_jJSn/pub?embedded=true,https://drive.google.com/open?id=1CBBHdz9svVDxuBsbWJe2QYV-nSg30liubZhjDziEfIU,null,interview,domain vis,
+5-13-19,Sketchbook,null,null,513,sketch,,
+5-14-19,Initial Meeting with Austin Patton,https://docs.google.com/document/d/e/2PACX-1vRHdgkNcsgttI_uIFFOKS1U0-xsFoEdq3p6MGyDWzxljWqLrkUDuWWWoIqk7bfGN4ITIU15hoMwE18p/pub?embedded=true,https://drive.google.com/open?id=1agn4K45aC6LomGCJmXPdHWe-DZVzjnq9VTp69WAemU0,null,interview,convergence,
+5-14-19,Initial meeting with Megan,https://docs.google.com/document/d/e/2PACX-1vRliyBwKoNy0_asl-JcKmXXWQmKhXIsHnnOnsAgw2S8ZHtECQ2D0wsg0UADevUej21z1tdw3ai-L5y2/pub?embedded=true,https://drive.google.com/open?id=1V0W_GdxWRZ96m3bIr4k8De8GYftjsB8AwDin61k-DQ4,null,interview,summary stats,
+5-14-19,Initial Meeting with Larry,https://docs.google.com/document/d/e/2PACX-1vRMVvPNd7XTkSK_17kSKfSbCBwh00TwjxH3v1rGV3PLAgPTwm8o_hhetp2dgA4QB9NUEGdzHcH6Bm9u/pub?embedded=true,https://drive.google.com/open?id=116-es5empavSvVF9SHWaYdoQNnsvn96b0886jXkiiYM,null,interview,meta,
+5-15-2019,Sketchbook,null,null,515,sketch,,
+5-17-2019,Examples of Work from Lab,https://docs.google.com/document/d/e/2PACX-1vRqniMqU4v6PvHTN0LIpRVVWAWwIRgldyVPUH16IrhHfdxNcrTffuHyPlH4A5pHwtLcGJW0Fn_5ckr9/pub?embedded=true,https://docs.google.com/document/d/1oEC_gF1BQO5GhXQA1Dp-H1__9H2gH9M9Zf7EKlzt8t0/edit?usp=sharing,null,domain,context,
+5-17-2019,Initial Interview with Eva Top,https://docs.google.com/document/d/e/2PACX-1vT2AS-f0dIDqKdme6Ds1dkLR1KuxuzMp0Ac5Rv3Q4Q-B0um6uRPoc4bQlYV6nr57e82NARUQBYUwk1m/pub?embedded=true,https://drive.google.com/open?id=12nuvZ0_WnLUQffpXBif1ODW9VrvVPmN4YMo7G2_tihs,null,interview,genetics,
+5-17-19,Gave Presentation to Group,https://docs.google.com/document/d/e/2PACX-1vSNKDZKPRYBeNBNjr6MXdp36aHK4-ihI5Etrn4WDWVNTfza_7Q4qNngvMU8FByWH0p9IkqKGboA6-SU/pub?embedded=true,https://drive.google.com/open?id=1COrWdnRfjF5_dIBfxMzYvTuAF0FDzNpn-xt7EB_VFZY,null,presentation,expectations,
+5-18-19,Domain Visual Examples,https://docs.google.com/document/d/e/2PACX-1vRV2YyZuv3U0uZYZNsMlixv-_OJRsj5WhUTAyZyIbED3gIczr1H1C5kKUZofy5I3GvHfvWFhSlI7OEI/pub?embedded=true,https://docs.google.com/document/d/1O4loLJ_0pC15BFk7DFY2KBeMwNQpQ2MLyiYUPt2kJVM/edit?usp=sharing,null,domain,context,
+5-20-19,Initial Meeting with Thibault,https://docs.google.com/document/d/e/2PACX-1vTtjSqV2F_3te8ombaR4Z2oH2WHjd_Pv1IScdJCzmw-3nKj_FVDetBwgK4q0_9EvJdPEdZVRMre2DSJ/pub?embedded=true,https://drive.google.com/open?id=1Xq86TZWGonHhIYUfjFA1zbz72FGB97EzRfLfCAx5aBM,null,interview,matrices,
+5-20-19,Initial Meeting with Amanda,https://docs.google.com/document/d/e/2PACX-1vQzc4b6IvcMyG549RnAueFWJWcLrbxn5Ouw8hl67nc8GLd-D3RQiDgKj0SqBBcG9imG0kuB0UbqHKSH/pub?embedded=true,https://drive.google.com/open?id=1O4mIrjueQv25sHhet89g_FFhybYQ43aYTpSE1yMuYcM,null,interview,pca,
+5-21-19,Planning Creativity Workshop,https://docs.google.com/document/d/e/2PACX-1vSPSRoyzF5NKYWzSpgBJ8bwXqlGsqiiO2qSW2s5ko_MLsc_Sas5qGXpQTpedlzb7vTiOG6llDNA_DvO/pub?embedded=true,https://drive.google.com/open?id=1aiCMLIgkqc0S0sceUwUIt1OGoLZU9rqGCJE3vn0pRTI,null,brainstorm,,
+5-21-19,Started uncertainty example collection,https://docs.google.com/document/d/e/2PACX-1vRJq28zMaw-EijPSbqrJtZMG6xG2ETlrHkYvKIO-i69CC80wJC-suyZ_XueEWglgmjuahq3S-vD6ia3/pub?embedded=true,https://docs.google.com/document/d/1nA6SKN71eC7d0TBRI-3LmLKXym7HBffv4fJpBosevkw/edit?usp=sharing,null,domain,context,
+5-21-19,Visit Maren's Lab at WSU,https://docs.google.com/document/d/e/2PACX-1vQuvlEWTPSuLXok0YNFFwHd0xbAxNbgO2SLGqGFVFzmdZ3cbceXBlb77AWpdj5CkexbrZRPTF560TLJ/pub?embedded=true,https://drive.google.com/open?id=1LDHrj29JDMha6CVq4QdC6MYKvQrppeunw79qm93Vngw,null,presentation,interview,
+5-22-19,Meet with Roni to Discuss Multinet,https://docs.google.com/document/d/e/2PACX-1vTXECNthJ5k90u2Qh_SETSahjAIWV4O6Bg3m8Q9W1qZRS8g2X4XS-9iQi6W3YCv_OP4eoWgM70bTjGc/pub?embedded=true,https://drive.google.com/open?id=1X-Qt-K5uOsnZTsf4eCm2wgyqw3yUbYb_q7hzL03ckts,null,brainstorm,assesment,
+5-22-19,Sketch Brainstorm Ideas,https://docs.google.com/document/d/e/2PACX-1vR6SPeyX2sYBu68mvxsyyx7dn7Qvy20NEWwDhBz6exOTKX8iAtQYqIvvOH16xA_-JzSls2Iu8VbpehT/pub?embedded=true,https://drive.google.com/open?id=19WhXqPs9Plo2tDmPzquWfFxfINy2Zcd4abUgO1cMgPs,null,brainstorm,,
+5-24-19,,null,null,work1,workshop,documentation,sketch
+5-24-19,,null,null,work2,workshop,documentation,sketch
+5-24-19,,null,null,work3,workshop,documentation,sketch
+5-24-19,,null,null,work4,workshop,documentation,sketch
+5-24-19,,null,null,work5,workshop,documentation,sketch
+5-24-19,,null,null,work6,workshop,documentation,sketch
+5-24-19,,null,null,work7,workshop,documentation,sketch
+5-24-19,,null,null,work8,workshop,documentation,sketch
+5-24-19,,null,null,work9,workshop,documentation,sketch
+5-24-19,,null,null,work10,workshop,documentation,sketch
+5-24-19,,null,null,work11,workshop,documentation,sketch
+5-24-19,,null,null,work12,workshop,documentation,sketch
+5-24-19,,null,null,work13,workshop,documentation,sketch
+5-24-19,Workshop Notes,https://docs.google.com/document/d/e/2PACX-1vT9VQM-cpRhLDDKqF2yCWCNI3VHk7ZTRbwyFKR8U-0i0_rNsQzPhNxIw3tqE2MyNxIssM0mLnkcvS_i/pub?embedded=true,https://drive.google.com/open?id=1qZkIZzwFfdkR5Ok7EOUawomJOa_ejXtcHHo_SpBKgB4,null,brainstorm,interview,
+5-27-19,Summarized Needs from Workshop,https://docs.google.com/document/d/e/2PACX-1vTLtSRe4AsPGAREc17acbj61NMjZheBNQGOn6KU8bcjVBPVQy7URLCZmdk0R_i_ij9WNVDST1F0aoQP/pub?embedded=true,https://drive.google.com/open?id=13aJrHNAsp5tFBLYEnXEE_3XIIlB13cwhbEOOtF5W9oY,null,brainstorm,analysis,
+5-28-19,Sketchbook,null,null,528,sketch,brainstorm,
+5-29-19,Skype with James and Luke,https://docs.google.com/document/d/e/2PACX-1vS0O867bIkQuZw7x5j9Gj-ySg_n0p24QwJCmdz5ofXeinFiV2L8USuZNgUqifP5p3S5R0AJrb1tsVNQ/pub?embedded=true,https://drive.google.com/open?id=1BjxRa-8FrnfzE_esX2lvaNdDwlLTPYGgmPmU6xmNtKI,null,interview,collaboration,
+5-29-19,Meeting with Luke,https://docs.google.com/document/d/e/2PACX-1vT7ttMoaJbaU2P6lpMqHFdINqzaEDT5ZKjSoNH8fJPmWZKS6_2Jxco6R_vXbHPofy7Xu6I6IZYZ9EKd/pub?embedded=true,https://drive.google.com/open?id=1sJaAYnN5YK26hbNBHmXzHAKXK5J2vNpMbFIrgDpwYGQ,null,domain,technology gap,
+5-29-19,Sketchbook,null,null,529,sketch,brainstorm,
+5-30-19,Draft Initial Requirements Document,https://docs.google.com/document/d/e/2PACX-1vRpBVsybu8CRfiQlS7nYC--Wtd4cO-cLQtpngLFJswZ3Ud_8cC0oEKRzGgxK0OyGqIxwk8Ogp8839xe/pub?embedded=true,https://drive.google.com/open?id=1uRb4cVgZUyC01McvBjhV_7fEbis2bcCD7bmwshlNUCY,null,brainstorm,analysis,
+5-30-19,Sketchbook,null,null,530,sketch,brainstorm,
+5-31-19,Sketching Tool Features,https://docs.google.com/document/d/e/2PACX-1vQDaf3lHYK5RuB3iPcUcp1-XSw7_8weGWBUEU9kEi4ViJA73gyBm1cJK9uLiVr5YrjTQV5xljOJvQGR/pub?embedded=true,https://drive.google.com/open?id=1jjTZkVTfjl-mfFX1HJ5hiGrXWJBPb4BMgEHzFjY7z14,null,brainstorm,,
+5-31-19,Sketchbook,null,null,531,sketch,brainstorm,
+6-1-19,Sketchbook,null,null,601,sketch,brainstorm,
+6-3-19,Familiarizing Myself with the Domain Analysis workflow,https://docs.google.com/document/d/e/2PACX-1vSHUvUGhXhEWNGx8H-qStV3ZueMwfPpq82ZN_x23aHDRkaPIyG--AJvaGzjQLTBH3M1DafwoCGP5-xT/pub?embedded=true,https://drive.google.com/open?id=1lXoM4dGVmC60g5U62QqVYzbceGXRa2bbKkJk0w2i7vg,null,domain,,
+6-5-19,Second Meeting with Daniel,https://docs.google.com/document/d/e/2PACX-1vQhVvWd5vW7xeDyu2a0VeRpYx7wpF0KcYuogIIPhntHNGG_tpsNWm-NyZPPGCqflKPLDNGRSyISgK9D/pub?embedded=true,https://docs.google.com/document/d/15TUE8RSdpjZQUhMG-0S-onVOwwtfH5uZT8ptzvjFaok/edit?usp=sharing,null,interview,,
+6-6-19,Status check on progress with Roni and Curt,https://docs.google.com/document/d/e/2PACX-1vT-BTJUxgIneyAeNMQDdwOQSy_3GspyKXrw3mLf9dBmFbSRXx-0EYlN3qdRE4dRoQDhh8ufPSPhlrKZ/pub?embedded=true,https://drive.google.com/open?id=1gdqZy0Z8oSRcBZ4AyPZRsRtTNHjslcz1-2RR2eKvAuM,null,meeting/assesment,,
+6-7-19,Familiarizing myself with Arbor Workflows,https://docs.google.com/document/d/e/2PACX-1vS93PaMF15hkxguLvGUQWXSWTU9Qg-McVOGlckmXm2Q-tSjryIk1XY404wVxzkQfYOasbTfP37B_V-Y/pub?embedded=true,https://drive.google.com/open?id=1BUnjkyo1p0fEQfchYcuiwSD8USkkwMoejBe6EknrXcg,null,domain,,
+6-10-19,Multinet Tech Meeting,https://docs.google.com/document/d/e/2PACX-1vSuguwD9FIuLrbocVlPDqN9fbmtyI6od-JQ0GQr76nd5JseGo2MlPP1N2UpVlxp48jhrJe66NkEaQ4n/pub?embedded=true,https://drive.google.com/open?id=1XDNn6thxyKS-ocer1rzlFA543Oaub4BhModeetYPo9o,null,meeting/assesment,,
+6-10-19,Sketchbook,null,null,610,sketch,brainstorm,
+6-12-19,Second Meeting with Austin,https://docs.google.com/document/d/e/2PACX-1vRIzj_A1GxcO8pdJev_9LJzbWomwMm4fg8GOLqxtyWCiFgu4MiTphfcUmK0YEVr0IEI4yhTjL-75F1q/pub?embedded=true,https://drive.google.com/open?id=1w7tCBBnGNl0Zyc11NsgHNUzSXukqJoF5e_BiSoD5n0U,null,interview,,
+6-13-19,Taking Notes on Ancestral State Reconstruction,https://docs.google.com/document/d/e/2PACX-1vTih6OYmWFI0Z7wFImts8IVlwDABqxtnyhL-iKLLK3n4T1u5l0Jw-Hw_t_YE6VbknVzocAbzfxCXbD3/pub?embedded=true,https://drive.google.com/open?id=1V1YiV3uttmLNer67f9avvjpEan9rFfSaBQTc0D2CbEw,null,domain,,
+6-13-19,Sketchbook,null,null,613,sketch,brainstorm,
+6-14-19,Second Meeting with Hector,https://docs.google.com/document/d/e/2PACX-1vRXUbYWeBKbZXWfpF_1fm4ktTWX5iGIKELqKgjlvn6yNILBxSWePYpbz5CB58hadMQ4vfI7rQUJ6LYq/pub?embedded=true,https://drive.google.com/open?id=1mkg2QMYs5hRDwqtPOSiCqIdPnBU-7QLlH59rG3x6v7E,null,interview,domain feedback,
+6-18-19,Created Illustrator Mockups,null,null,,,,
+6-18-19,Meeting with Alex,https://docs.google.com/document/d/e/2PACX-1vTaWgt7auGVq4vGkAJMVN8d5BoyZPSRtbpyMziPEKu6yAxDBRn9vlWF4UY1Pvjlk-udSrt-rkwjgz5A/pub?embedded=true,https://drive.google.com/open?id=1O2zleJggoOQwtPoPh_sllkMJgRnNRY6TGYVSRdlDw8o,null,meeting/assesment,,
+6-21-19,Update on Path Design ,null,null,mockup-621,sketch,mockup,
+7-5-19,Sketchbook,null,null,705,sketch,brainstorm,
+7-9-19,Sketchbook,null,null,709,sketch,brainstorm,
+7-16-19,Meeting with Alex,https://docs.google.com/document/d/e/2PACX-1vTmnh6e02FxI5uP7XWfYQM6enhp0wXfqv-0DZeVEXGJ20eSEYSlWdiCxqGbxKx7QvkGFYSKi0AVU-BM/pub?embedded=true,https://drive.google.com/open?id=13W4jlH9kbzytetqBa9yyp-iuX96yWiD5gKYp8QImCw8,null,meeting/assesment,,
+7-16-19,Sketchbook,null,null,716,sketch,brainstorm,
+7-17-19,Third Meeting with Austin,https://docs.google.com/document/d/e/2PACX-1vRuY3wQ6ZNK_0cMWdZZE5NShWGy2u-VnpxJNVnCAICcKEhYfGM8Q3RJoZGtTLLFAfmLL0jmeoazzVr7/pub?embedded=tru,https://drive.google.com/open?id=1i3xp4Yuqj9kGYHguLh1V4j4eD_rRrBd3l8nIikxRB-c,null,domain,,
+7-22-19,Update of Sidebar Tree,null,null,view-722,view,design,iteration
+7-23-19,Meeting with Luke,https://docs.google.com/document/d/e/2PACX-1vSHyYzRVdfIugYFT3is0xgN04dGR4GF4HVv8S1WAxZXUNzxzq8yso8PGghlgPglej6QQvijJnEqV7d2/pub?embedded=true,https://drive.google.com/open?id=1gcSln3J_KnTelW-YikR9qgJEAW7emIzvZRm8VyX5MUc,null,domain,,
+7-25-19,Development of Summary View,null,null,view-725B,view,design ,iteration
+7-25-19,Update on sort functionality,null,null,view-725,view,functionality ,
+7-29-19,Sketchbook,null,null,729,sketch,,
+7-30-19,Sketchbook,null,null,730,sketch,,
+7-31-19,Sketchbook,null,null,731,sketch,,
+8-7-19,Assesement of Development and Requirements,https://docs.google.com/document/d/e/2PACX-1vTjxMi7oIzD0JgOkNNqWWytbcK6Fs0EJueHZOwEq12rMdFw1n_KU_2bZRNgBUKOkzJR_QmDqts0s_Kk/pub?embedded=true,https://drive.google.com/open?id=1azshy7pwt0sfBn8nbFlisezLPlCyMysUvZZvAXMLyfo,null,brainstorm,,
+8-8-19,Update of Summary View,null,null,view-808,view,design,iteration
+8-8-19,Notes:List of relevant vis,https://docs.google.com/document/d/e/2PACX-1vQ-PVe6Q76hPoJwI2zE1Xd9VYYx33jtF95vVdS47jczCrkrQukTe_dz9UPJO8UI4cL7qMGztB9ckWNx/pub?embedded=true,https://docs.google.com/document/d/1LQ1k7yGkITcrDQMgg7yMQ5v6i19rS6M8x9wJvCAO10Q/edit?usp=sharing,null,brainstorm,,
+8-15-19,Sketchbook,null,null,815,sketch,,
+8-20-19,Meeting with Alex and Miriah,https://docs.google.com/document/d/e/2PACX-1vSuCulu_eFfVd0lE6w_tnYVVAsq2j6ppTVQRFaIfnU7l9sGYtYkVueNAqMD8mzQON9oC-EkLuttPpy_/pub?embedded=true,https://drive.google.com/open?id=1JkN6DvnHuO6iYSyCOpdoqoltxfyaVmdulkWoNqjQAiE,null,meeting/assesment,,
+8-22-19,Re-revisit Requirements,https://docs.google.com/document/d/e/2PACX-1vSjn63byhmwc-oIAQaFJVHTDfdOwXUSiGvZ4rviO4YRPeRrjjWy4kPwINAElewUaj-8u_L2qBvqoM3E/pub?embedded=true,https://docs.google.com/document/d/1POBCPCq4Wd3mCU6Kc3kCM_8f2J5bEA6j1PvRnJLLVNg/edit?usp=sharing,null,domain,,
+8-23-19,Sketchbook,null,null,823,sketch,,
+8-26-19,sketchbook,null,null,826,sketch,,
+8-28-19,Meeting with Luke,https://docs.google.com/document/d/e/2PACX-1vSkHLO1lel7iNSFDHxSFQDszMKD6S1S_CX_6GDnETYnSuooyT8OHktE8YUerR7C6SmTLi5MsEC6lCDA/pub?embedded=true,https://drive.google.com/open?id=1jaM6MeVjKVAU4n0syZjqVdNLlyZJDZSFeJ9Lris6v2A,null,domain,pivot,
+8-30-19,Sketchbook,null,null,830,sketch,,
+9-2-19,Second Meeting with Megan,null,null,,domain,,
+9-3-19,Sketchbook,null,null,903,sketch,,
+9-4-19,Sketchbook,null,null,904,sketch,,
+9-6-19,Meeting with Alex and Miriah Go Over Process,null,keynote,process,presentation,meeting/assesment,
+9-13-19,Meeting with Alex and Miriah Go Over Process,,keynote,process,presentation,meeting/assesment,
+9-19-19,Breaking Down the Domain Problem Notes,https://docs.google.com/document/d/e/2PACX-1vSItH11RVSFb3KyQKm7X0Wr7j1sh7BgjWjxoTe9jdcNAvxPcxkWurbVWyNj9hu5pesvwYz_LgseuWf6/pub?embedded=true,https://docs.google.com/document/d/1hysqIomZWDtNGCCIPsw-62Wj5VuTM9zQloiIoQOmb9Q/edit?usp=sharing,null,domain,analysis,
+10-4-19,Meeting with Alex and Miriah,https://docs.google.com/document/d/e/2PACX-1vTmhRDhaNHwjbPpM-_LFPd6pBYnQI0YDAqItG9FmIornZKH2GHAPz7G6L9gI0imyoVupt5bhoQTA0u2/pub?embedded=true,https://docs.google.com/document/d/1BRsEtgopjhlhakeWJwbaxrKua0iFwx2ZCwC5PRKgVD8/edit?usp=sharing,null,meeting/assesment,abstraction,
+10-18-19,Meeting with Luke to Talk about Convergence,https://docs.google.com/document/d/e/2PACX-1vQBC30U8Zw12FvRI1PvOpLlf8ZOKC4nq9NxveLH64fbwrCy3r2iTK_7IMTlvg4TZhK8rSUDgPgXEdTQ/pub?embedded=true,https://drive.google.com/open?id=1-D27IjjHpUXJtsR6QWz_pwu7dlnFdMTcEgsIop0UzNY,null,domain,clarification,
+10-18-19,Showed Austin the group functionality to identify convergence,null,null,group-view,view,pivot,
+10-18-19,Meeting with Austin at U of I,https://docs.google.com/document/d/e/2PACX-1vQCPp3Sd8b0nOW_cxbmSX4z4BamTqTjqyqH-L6RXUVX5PyRj8qFeQW9EQF3m3owEkZHWNC2FytKXl6l/pub?embedded=true,https://docs.google.com/document/d/16Zz5V8qwpioB582QSTjYfHqSY8Be3MNhsE5imhS40R8/edit?usp=sharing,null,meeting/assesment,brainstorming,pivot
+10-18-19,Whiteboard Sketch from Discussion,null,null,1018-photo,sketch,brainstorming,from collaborator
+10-21-19,Sketchbook,null,null,1021,sketch,brainstorming,
+10-31-19,Update of Ranked View,null,null,pheno-example,moving-update,iteration,functionality
+11-01-19,Sketchbook,null,null,1101,sketch,brainstorming,
+11-04-19,Meeting with Luke and Alex,null,null,null,meeting/assesment,clarification,
+11-08-19,Changed Discrete Summary,null,null,view-1108,view,iteration,
+11-08-19,Meeting with Alex and Miriah,https://docs.google.com/document/d/e/2PACX-1vTcpoPWjlujmLqFOAWnQNQkFqPUfxo94ZkM75MrLlCIUY-nnBrR7z8ftqtD4PjvxfnsOdsQr81fjjph/pub?embedded=true,https://docs.google.com/document/d/1HlSERPWpAUZ66qXOPfqKMCjdfQTTGeXY_33IXk5260c/edit?usp=sharing,null,meeting/assesment,storyline,contribution
+11-15-19,Meeting with Alex and Miriah,https://docs.google.com/document/d/e/2PACX-1vQRC_xaTgXu-KayMAnKvQofliSz0JYGrNoVTEmR13tcEnRN50w1BZrTH_MKOeQE8pd4303-hyUaL619/pub?embedded=true,https://docs.google.com/document/d/164yad8Dfb6j4Xr6oFD4_IsvjFh3U8NzzhKXXd_IhuXY/edit?usp=sharing,null ,meeting/assesment,brainstorming,
+11-22-19,Meeting with Alex and Miriah,https://docs.google.com/document/d/e/2PACX-1vRAZk8KNJlVk8N1Z03ayfQ1ofMSIxypOYUMdXicx1VsC2b0_xP9LHv4ZjsBOOHWgE09A1xKU8NNSTKS/pub?embedded=true,https://docs.google.com/document/d/1XQx54__V75BoxlbUPAn3ZgeT62sLIhUWqmWkWf23c9c/edit?usp=sharing,null,meeting/assesment,,
+12-02-19,Notes on Tree Topology,https://docs.google.com/document/d/e/2PACX-1vRwKPAkHDZFqBAiauJo5_0sCaXqpsJEi_4-eZuZ3d1pCJ31ZTp5VZjXKtsAl56z-rdcoU5Gpi_TakkC/pub?embedded=true,https://docs.google.com/document/d/1PFNrVBxkLiKqikxkR4V0MOC4lxoH-5Kye9FWFNaA4Qw/edit?usp=sharing,null,domain,,
+12-05-19,Sketchbook,null,null,1205,sketch,,
+12-10-19,Revisited descrete summary view,null,null,view-1210,view,,
+12-11-19,Sent out emails to get datasets from 4 other labs in Utah,https://docs.google.com/document/d/e/2PACX-1vSPu-WfL_48S73UBfWpVY7alUnC43RDzU4YHCFkiUD-x0I119KYAqcgOoswvRXTgRVJ9zTS-GyujKYE/pub?embedded=true,https://docs.google.com/document/d/1NndOC1sUSpBnO1jVdpJVa1XwbgYmshqIkaPDd5U5u1A/edit?usp=sharing,null,correspondance,,
+12-11-19,"Brainstormed names, made sample logo",null,null,Flux-Logo,sketch,,

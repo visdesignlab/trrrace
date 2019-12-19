@@ -157,7 +157,7 @@ export async function renderTimeline(){
             .attr('x', 0)
             .attr("xlink:href", `public/assets/${d.Sketch_ID}.gif`);
         }else{
-            sidebox.append('iframe').attr('src', 'https://docs.google.com/document/d/e/2PACX-1vQRC_xaTgXu-KayMAnKvQofliSz0JYGrNoVTEmR13tcEnRN50w1BZrTH_MKOeQE8pd4303-hyUaL619/pub?embedded=true')
+            sidebox.append('iframe').attr('src', d.embed_link)
         }
 
     }).on('mouseout', ()=> {
