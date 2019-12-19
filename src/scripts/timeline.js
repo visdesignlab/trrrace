@@ -70,12 +70,12 @@ export async function renderTimeline(){
     let wrapGroup = svg.append('g').classed('time-wrap', true).attr('transform', `translate(10, 20)`);
 
     let timePath = wrapGroup.append('line')
-    .attr('y1', 0)
-    .attr('y2', (height-100))
-    .attr('x1', 100)
-    .attr('x2', 100)
-    .style('stroke-width', '1px')
-    .style('stroke', 'gray');
+        .attr('y1', 0)
+        .attr('y2', (height-100))
+        .attr('x1', 100)
+        .attr('x2', 100)
+        .style('stroke-width', '1px')
+        .style('stroke', 'gray');
 
     let eventGroups = wrapGroup.selectAll('g.event').data(groupedData).join('g')
                     .classed('event', true)
@@ -104,13 +104,13 @@ export async function renderTimeline(){
    
     eventSquares.on('mouseover', (d, i, n)=> {
        
-        let tooltip = d3.select('#tooltip')
-        tooltip.style('opacity', 1);
+        // let tooltip = d3.select('#tooltip')
+        // tooltip.style('opacity', 1);
        
-        tooltip
-        .html(d.Event)
-        .style("left", (n[i].getBoundingClientRect().x) + "px")
-        .style("top", (n[i].getBoundingClientRect().top - 50) + "px")
+        // tooltip
+        // .html(d.Event)
+        // .style("left", (n[i].getBoundingClientRect().x) + "px")
+        // .style("top", (n[i].getBoundingClientRect().top - 50) + "px")
 
         let sidebox = d3.select('body').append('div').attr('id','sidebox');
 
@@ -127,11 +127,23 @@ export async function renderTimeline(){
             let im = sideboxSVG.append("svg:image")
             .classed('sketch', true);
 
-            im.style('width', '1200px')
+            im.style('width', '1100px')
             .attr('y', 0)
             .attr('x', 0)
             .attr("xlink:href", `public/assets/${d.Sketch_ID}.png`);
 
+        }else if(d.tag1 === 'workshop'){
+           
+            let sideboxSVG = sidebox.append('svg').style('width', '1100px')
+            .style('height', '600px');
+
+            let im = sideboxSVG.append("svg:image")
+            .classed('sketch', true);
+
+            im.style('width', '900px')
+            .attr('y', 0)
+            .attr('x', 0)
+            .attr("xlink:href", `public/assets/${d.Sketch_ID}.png`);
         }else if(d.tag1 === 'moving-update'){
            
             let sideboxSVG = sidebox.append('svg').style('width', '1100px')
@@ -145,7 +157,7 @@ export async function renderTimeline(){
             .attr('x', 0)
             .attr("xlink:href", `public/assets/${d.Sketch_ID}.gif`);
         }else{
-
+            sidebox.append('iframe').attr('src', 'https://docs.google.com/document/d/e/2PACX-1vQRC_xaTgXu-KayMAnKvQofliSz0JYGrNoVTEmR13tcEnRN50w1BZrTH_MKOeQE8pd4303-hyUaL619/pub?embedded=true')
         }
 
     }).on('mouseout', ()=> {
