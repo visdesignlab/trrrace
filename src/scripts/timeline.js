@@ -157,7 +157,7 @@ export async function renderTimeline(){
             .attr('x', 0)
             .attr("xlink:href", `public/assets/${d.Sketch_ID}.gif`);
         }else{
-            sidebox.append('iframe').attr('src', d.embed_link)
+            sidebox.append('iframe').attr('src', d.embed_link).attr('frameborder',0);
         }
 
     }).on('mouseout', ()=> {
