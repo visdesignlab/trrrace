@@ -32,7 +32,11 @@ export function renderFunctionality(){
     `)
 
     let summarySub = addSection(funWrap, 'Summary View', 'sub-section');
-    summarySub.append('text').text('Description of Summary View geos here')
+    let summDisDiagramImage = document.createElement("img");
+    summarySub.node().appendChild(summDisDiagramImage);
+    summDisDiagramImage.src = 'public/assets/view-1230.png';
+    summarySub.append('text').text('Description of Summary View geos here');
+
 
     let pairSub = addSection(funWrap, 'Pair-Wise Trait Comparison', 'sub-section')
     let pairDiagramImage = document.createElement("img");
