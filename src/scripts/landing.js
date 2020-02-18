@@ -32,10 +32,19 @@ export function renderFunctionality(){
     `)
 
     let summarySub = addSection(funWrap, 'Summary View', 'sub-section');
+    summarySub.append('h4').text('Discrete Summary');
     let summDisDiagramImage = document.createElement("img");
     summarySub.node().appendChild(summDisDiagramImage);
-    summDisDiagramImage.src = 'public/assets/view-1230.png';
-    summarySub.append('text').text('Description of Summary View geos here');
+    summDisDiagramImage.src = 'public/assets/discrete-summary-breakdown.jpg';
+   // summarySub.append('text').text('Description of Summary View geos here');
+    summarySub.select('img').style('width', '1100px');
+
+    summarySub.append('h4').text('Continuous Summary');
+    let summConDiagramImage = document.createElement("img");
+    summarySub.node().appendChild(summConDiagramImage);
+    summConDiagramImage.src = 'public/assets/continuous-summary.png';
+   // summarySub.append('text').text('Description of Summary View geos here');
+    d3.select(summConDiagramImage).style('width', '1100px');
 
 
     let pairSub = addSection(funWrap, 'Pair-Wise Trait Comparison', 'sub-section')
