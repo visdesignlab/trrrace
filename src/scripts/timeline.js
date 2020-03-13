@@ -45,7 +45,7 @@ export async function renderTimeline(){
     svg.attr('height', height);
 
  
-    let labelWrapGroup = labelWrap.append('svg').append('g').attr('transform', `translate(${width * .3}, 10)`);
+    let labelWrapGroup = labelWrap.append('svg').append('g').attr('transform', `translate(100, 10)`);
    // let labelWrap = svg.append('g').classed('label-wrap', true).attr('transform', `translate(${width / 2}, 10)`);
     let tagLabel = labelWrapGroup.selectAll('.tag-label').data(tags).join('g').classed('tag-label', true);
     tagLabel.attr('transform', (d, i)=> `translate(${i*100}, 0)`)
