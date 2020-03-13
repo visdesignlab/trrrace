@@ -4,6 +4,8 @@ import * as d3Array from 'd3-array';
 
 export async function renderTimeline(){
     d3.select('#main').selectAll('*').remove();
+
+    let labelWrap = d3.select('#main').append('div').classed('label-wrap-div', true);
     
     let svg = d3.select('#main').append('svg').classed('timeline', true);
     let data = await d3.csv('public/data/timeline.csv');
@@ -42,8 +44,10 @@ export async function renderTimeline(){
 
     svg.attr('height', height);
 
-    let labelWrap = svg.append('g').classed('label-wrap', true).attr('transform', `translate(${width / 2}, 10)`);
-    let tagLabel = labelWrap.selectAll('.tag-label').data(tags).join('g').classed('tag-label', true);
+ 
+    let labelWrapGroup = labelWrap.append('svg').append('g').attr('transform', `translate(${width * .3}, 10)`);
+   // let labelWrap = svg.append('g').classed('label-wrap', true).attr('transform', `translate(${width / 2}, 10)`);
+    let tagLabel = labelWrapGroup.selectAll('.tag-label').data(tags).join('g').classed('tag-label', true);
     tagLabel.attr('transform', (d, i)=> `translate(${i*100}, 0)`)
     tagLabel.append('rect').attr('width', 95).attr('height', 20).attr('fill', (d)=> d.color).attr('opacity', .6)
     tagLabel.append('text').text(d=> d.tag).style('font-size', 10).attr('y', 12).attr('x', 3)
