@@ -21,11 +21,21 @@ export async function renderTimeline(){
         '#e74c3c',
         '#884ea0',
         '#e67e22',
+        '#FF008B',
         '#85c1e9',
         '#FFC300',
-        '#a3e4d7',
         '#28B463',
-        '#5D6D7E'
+        '#5D6D7E',
+        '#A3E4D7',
+        '#E74C3C',
+        '#9B59B6',
+        '#1D8348',
+        '#1A5276',
+        '#0B5345',
+        '#FAD7A0',
+        '#FAA0F5',
+        '#F0FF00',
+        '#2AFF00'
     ];
 
     let rangeInIdaho = [['05-13-19', '07-31-19'], ['10-17-19', '10-19-19'], ['02-02-20', '02-07-20']];
@@ -112,9 +122,9 @@ export async function renderTimeline(){
     eventSquares.attr('transform', (d, i)=> `translate(${13 + (i * 12)}, -5)`);
 
     let aDrive = eventSquares
-    .filter(f=> f.tag1 != 'sketch' && f.tag1 != 'presentation' && f.tag1 != 'pivot' && f.tag1 != 'view').append('a')
-    .attr("xlink:href", d=> {
-        return d.Drive_Link});
+    // .filter(f=> f.tag1 != 'sketch' && f.tag1 != 'presentation' && f.tag1 != 'pivot' && f.tag1 != 'view').append('a')
+    // .attr("xlink:href", d=> {
+    //     return d.Drive_Link});
     aDrive.append('rect').attr('width', 10).attr('height', 10).attr('fill', (d, i)=> tags
         .filter(f=> f.tag === d.tag1)[0].color).attr('opacity', 0.6);
 
@@ -122,69 +132,84 @@ export async function renderTimeline(){
     .attr('width', 10).attr('height', 10)
     .attr('fill', (d, i)=> tags.filter(f=> f.tag === d.tag1)[0].color)
     .attr('opacity', 0.6);
+
+    let clickedBool = false;
    
-    eventSquares.on('mouseover', (d, i, n)=> {
-       
-        // let tooltip = d3.select('#tooltip')
-        // tooltip.style('opacity', 1);
-       
-        // tooltip
-        // .html(d.Event)
-        // .style("left", (n[i].getBoundingClientRect().x) + "px")
-        // .style("top", (n[i].getBoundingClientRect().top - 50) + "px")
+    //eventSquares.on('mouseover', (d, i, n)=> {
+    eventSquares.on('click', (d, i, n)=> {
 
-        let sidebox = d3.select('body').append('div').attr('id','sidebox');
+         let tooltip = d3.select('#tooltip').style('opacity', 0);
+         d3.select('#sidebox').remove();
 
-        sidebox.append('h3').text(`${d.Event} ${d.date}`)
-        sidebox.append('h3').text("Tags: ")
-        sidebox.append('h3').text(`${d.tag1}, ${d.tag2}, ${d.tag3}`)
-       
-                 
-        if(d.tag1 === 'sketch' || d.tag1 === 'pivot' || d.tag1 === 'view'){
+        ////]
 
-            let sideboxSVG = sidebox.append('svg').style('width', '1100px')
-            .style('height', '600px');
+        if(clickedBool != d.Date_Range + '_' + d.Event){
 
-            let im = sideboxSVG.append("svg:image")
-            .classed('sketch', true);
-
-            im.style('width', '1100px')
-            .attr('y', 0)
-            .attr('x', 0)
-            .attr("xlink:href", `public/assets/${d.Sketch_ID}.png`);
-
-        }else if(d.tag1 === 'workshop'){
+            console.log('d', d.Date_Range + '_' + d.Event);
+            clickedBool = d.Date_Range + '_' + d.Event;
+    
+            let sidebox = d3.select('body').append('div').attr('id','sidebox');
+    
+            sidebox.append('h3').text(`${d.Event} ${d.date}`)
+            sidebox.append('h3').text("Tags: ")
+            sidebox.append('h3').text(`${d.tag1}, ${d.tag2}, ${d.tag3}`)
            
-            let sideboxSVG = sidebox.append('svg').style('width', '1100px')
-            .style('height', '600px');
+                     
+            if(d.tag1 === 'sketch' || d.tag1 === 'pivot' || d.tag1 === 'view'){
+    
+                let sideboxSVG = sidebox.append('svg').style('width', '1100px')
+                .style('height', '600px');
+    
+                let im = sideboxSVG.append("svg:image")
+                .classed('sketch', true);
+    
+                im.style('width', '1100px')
+                .attr('y', 0)
+                .attr('x', 0)
+                .attr("xlink:href", `public/assets/${d.Sketch_ID}.png`);
+    
+            }else if(d.tag1 === 'workshop'){
+               
+                let sideboxSVG = sidebox.append('svg').style('width', '1100px')
+                .style('height', '600px');
+    
+                let im = sideboxSVG.append("svg:image")
+                .classed('sketch', true);
+    
+                im.style('width', '900px')
+                .attr('y', 0)
+                .attr('x', 0)
+                .attr("xlink:href", `public/assets/${d.Sketch_ID}.png`);
+            }else if(d.tag1 === 'moving-update'){
+               
+                let sideboxSVG = sidebox.append('svg').style('width', '1100px')
+                .style('height', '600px');
+    
+                let im = sideboxSVG.append("svg:image")
+                .classed('sketch', true);
+    
+                im.style('width', '900px')
+                .attr('y', 0)
+                .attr('x', 0)
+                .attr("xlink:href", `public/assets/${d.Sketch_ID}.gif`);
+            }else{
+                sidebox.append('iframe').attr('src', d.embed_link).attr('frameborder',0);
+            }
 
-            let im = sideboxSVG.append("svg:image")
-            .classed('sketch', true);
 
-            im.style('width', '900px')
-            .attr('y', 0)
-            .attr('x', 0)
-            .attr("xlink:href", `public/assets/${d.Sketch_ID}.png`);
-        }else if(d.tag1 === 'moving-update'){
-           
-            let sideboxSVG = sidebox.append('svg').style('width', '1100px')
-            .style('height', '600px');
 
-            let im = sideboxSVG.append("svg:image")
-            .classed('sketch', true);
-
-            im.style('width', '900px')
-            .attr('y', 0)
-            .attr('x', 0)
-            .attr("xlink:href", `public/assets/${d.Sketch_ID}.gif`);
-        }else{
-            sidebox.append('iframe').attr('src', d.embed_link).attr('frameborder',0);
         }
+    
+        
 
-    }).on('mouseout', ()=> {
-        let tooltip = d3.select('#tooltip').style('opacity', 0);
-        d3.select('#sidebox').remove();
-    });
+
+
+
+    })
+    // .on('mouseout', ()=> {
+    //     let tooltip = d3.select('#tooltip').style('opacity', 0);
+    //     d3.select('#sidebox').remove();
+    // });
 
     eventSquares.filter(f=> f.tag1 === 'presentation').append('a')
     .attr("xlink:href", d=> {
