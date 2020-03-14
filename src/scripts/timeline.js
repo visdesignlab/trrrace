@@ -227,22 +227,24 @@ export async function renderTimeline(){
 
                 console.log('buttttt',d)
 
-                if(d.tag1 === 'sketch' || d.tag1 === 'pivot' || d.tag1 === 'view'){
+                window.open(d.embed_link, "_blank");
+
+                // if(d.tag1 === 'sketch' || d.tag1 === 'pivot' || d.tag1 === 'view'){
     
-                    window.open('public/assets/'+d.Sketch_ID, "_blank");
+                //     window.open(d.embed_link, "_blank");
         
-                }else if(d.tag1 === 'workshop'){
+                // }else if(d.tag1 === 'workshop'){
                    
-                    window.open('/public/assets/'+d.Sketch_ID, "_blank");
+                //     window.open(d.embed_link, "_blank");
                   
-                }else if(d.tag1 === 'moving-update'){
+                // }else if(d.tag1 === 'moving-update'){
                    
                   
-                }else{
+                // }else{
                    
-                   console.log('this in window')
-                   window.open(d.embed_link, "_blank");
-                }
+                //    console.log('this in window')
+                //    window.open(d.embed_link, "_blank");
+                // }
 
                 
 
