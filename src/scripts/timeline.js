@@ -134,25 +134,46 @@ export async function renderTimeline(){
     .attr('opacity', 0.6);
 
     let clickedBool = false;
+
+    let sideboxWrap = d3.select('body').append('div')
+    sideboxWrap.attr('id','sidebox-wrap');
+
+    let button = sideboxWrap.append('button')//.on('click', (b)=> console.log('is this work'))
+    button.style('opacity', '0');
+    button.text('Explore This');
+
+    button.on('click', ()=> {
+        console.log('test');
+    });
+
+    let sidebox = sideboxWrap.append('div').attr('id','sidebox');
+
+    console.log('sidebox',sideboxWrap)
    
     //eventSquares.on('mouseover', (d, i, n)=> {
     eventSquares.on('click', (d, i, n)=> {
 
          let tooltip = d3.select('#tooltip').style('opacity', 0);
-         d3.select('#sidebox').remove();
 
-        ////]
+         
+        // d3.select('#sidebox').remove();
 
+        sidebox.selectAll('*').remove();
+
+        console.log('testing')
+        
+       
         if(clickedBool != d.Date_Range + '_' + d.Event){
 
-            console.log('d', d.Date_Range + '_' + d.Event);
             clickedBool = d.Date_Range + '_' + d.Event;
     
-            let sidebox = d3.select('body').append('div').attr('id','sidebox');
-    
+            button.style('opacity', '1.0');
+           
             sidebox.append('h3').text(`${d.Event} ${d.date}`)
             sidebox.append('h3').text("Tags: ")
             sidebox.append('h3').text(`${d.tag1}, ${d.tag2}, ${d.tag3}`)
+
+           // sidebox.append('button').text('Explore This');
            
                      
             if(d.tag1 === 'sketch' || d.tag1 === 'pivot' || d.tag1 === 'view'){
@@ -180,6 +201,7 @@ export async function renderTimeline(){
                 .attr('y', 0)
                 .attr('x', 0)
                 .attr("xlink:href", `public/assets/${d.Sketch_ID}.png`);
+
             }else if(d.tag1 === 'moving-update'){
                
                 let sideboxSVG = sidebox.append('svg').style('width', '1100px')
@@ -194,7 +216,40 @@ export async function renderTimeline(){
                 .attr("xlink:href", `public/assets/${d.Sketch_ID}.gif`);
             }else{
                 sidebox.append('iframe').attr('src', d.embed_link).attr('frameborder',0);
+            
+             
+
             }
+
+            console.log('button',button)
+
+            button.on('click', ()=> {
+
+                console.log('buttttt',d)
+
+                if(d.tag1 === 'sketch' || d.tag1 === 'pivot' || d.tag1 === 'view'){
+    
+                    window.open('public/assets/'+d.Sketch_ID, "_blank");
+        
+                }else if(d.tag1 === 'workshop'){
+                   
+                    window.open('/public/assets/'+d.Sketch_ID, "_blank");
+                  
+                }else if(d.tag1 === 'moving-update'){
+                   
+                  
+                }else{
+                   
+                   console.log('this in window')
+                   window.open(d.embed_link, "_blank");
+                }
+
+                
+
+           })
+
+
+
 
 
 
