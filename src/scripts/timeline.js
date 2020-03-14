@@ -122,7 +122,7 @@ export async function renderTimeline(){
     eventSquares.attr('transform', (d, i)=> `translate(${13 + (i * 12)}, -5)`);
 
     let aDrive = eventSquares
-    // .filter(f=> f.tag1 != 'sketch' && f.tag1 != 'presentation' && f.tag1 != 'pivot' && f.tag1 != 'view').append('a')
+   //  .filter(f=> f.tag1 != 'sketch' && f.tag1 != 'presentation' && f.tag1 != 'pivot' && f.tag1 != 'view').append('a')
     // .attr("xlink:href", d=> {
     //     return d.Drive_Link});
     aDrive.append('rect').attr('width', 10).attr('height', 10).attr('fill', (d, i)=> tags
@@ -215,6 +215,8 @@ export async function renderTimeline(){
                 .attr('x', 0)
                 .attr("xlink:href", `public/assets/${d.Sketch_ID}.gif`);
             }else{
+
+                console.log("testing, d.tag1", d.tag1)
                 sidebox.append('iframe').attr('src', d.embed_link).attr('frameborder',0);
             
              
@@ -268,13 +270,13 @@ export async function renderTimeline(){
     //     d3.select('#sidebox').remove();
     // });
 
-    eventSquares.filter(f=> f.tag1 === 'presentation').append('a')
-    .attr("xlink:href", d=> {
-        return `public/assets/${d.Sketch_ID}.pdf`}).append('rect')
-        .attr('width', 10)
-        .attr('height', 10)
-        .attr('fill', (d, i)=> tags
-        .filter(f=> f.tag === d.tag1)[0].color).attr('opacity', 0.6);
+    // eventSquares.filter(f=> f.tag1 === 'presentation').append('a')
+    // .attr("xlink:href", d=> {
+    //     return `public/assets/${d.Sketch_ID}.pdf`}).append('rect')
+    //     .attr('width', 10)
+    //     .attr('height', 10)
+    //     .attr('fill', (d, i)=> tags
+    //     .filter(f=> f.tag === d.tag1)[0].color).attr('opacity', 0.6);
 
     let eventLabels = eventGroups.selectAll('text.event-label').data(d=> [d]).join('text')
         .classed('event-label', true)
