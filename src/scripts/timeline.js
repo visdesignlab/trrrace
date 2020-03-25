@@ -147,11 +147,6 @@ export async function renderTimeline(){
    // let button = sideboxWrap.append('div').attr('id', 'side-button').append('button')//.on('click', (b)=> console.log('is this work'))
     let button = makeButton(sideboxWrap.append('div').attr('id', 'side-button'), 'Explore This', null);
     button.style('opacity', '0');
-    //button.text('Explore This');
-
-   // button.on('click', ()=> {
-       // console.log('test');
-   // });
 
     let sidebox = sideboxWrap.append('div').attr('id','sidebox');
 
@@ -178,7 +173,11 @@ export async function renderTimeline(){
             sidebox.append('h3').text(`${d.tag1}, ${d.tag2}, ${d.tag3}`);
             sidebox.append('html').html('</br>');
             sidebox.append('h3').text("Tags: ");
-            sidebox.append('h3').text(`${d.highlighted.split(',')}`);
+
+            let badges = sidebox.append('div').selectAll('.badge').data(d.highlighted.split(',').filter(f=> f != ' ')).join('span').classed('badge badge-secondary', true)
+            badges.text(d=> d);
+
+            //sidebox.append('h3').text(`${d.highlighted.split(',')}`);
 
             if(d.tag1 === 'sketch' || d.tag1 === 'pivot' || d.tag1 === 'view'){
     
