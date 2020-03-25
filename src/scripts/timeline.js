@@ -159,14 +159,16 @@ export async function renderTimeline(){
 
         sidebox.selectAll('*').remove();
 
-        console.log('testing', d.highlighted.split(','), d, d3.select(n[i]))
-
+        console.log('testing', d, d3.selectAll('.event-sq').filter(f=> f.index_id != d.index_id))
+        d3.select(n[i]).style('opacity', 1);
 
         if(clickedBool != d.Date_Range + '_' + d.Event){
 
             clickedBool = d.Date_Range + '_' + d.Event;
     
             button.style('opacity', '1.0');
+
+            d3.selectAll('.event-sq').filter(f=> f.index_id != d.index_id).style('opacity', 0.2);
            
             sidebox.append('h3').text(`${d.Event} ${d.date}`);
             sidebox.append('h3').text("Type: ");
@@ -176,8 +178,6 @@ export async function renderTimeline(){
 
             let badges = sidebox.append('div').selectAll('.badge').data(d.highlighted.split(',').filter(f=> f != ' ')).join('span').classed('badge badge-secondary', true)
             badges.text(d=> d);
-
-            //sidebox.append('h3').text(`${d.highlighted.split(',')}`);
 
             if(d.tag1 === 'sketch' || d.tag1 === 'pivot' || d.tag1 === 'view'){
     
@@ -219,40 +219,22 @@ export async function renderTimeline(){
                 .attr("xlink:href", `public/assets/${d.Sketch_ID}.gif`);
             }else{
 
-                console.log("testing, d.tag1", d.tag1)
+                console.log("testing, d.tag1", d.tag1);
                 sidebox.append('iframe').attr('src', d.embed_link).attr('frameborder',0);
+
+               
             
              
 
             }
 
-            console.log('button',button)
-
+    
             button.on('click', ()=> {
 
-                console.log('buttttt',d)
 
                 window.open(d.embed_link, "_blank");
 
-                // if(d.tag1 === 'sketch' || d.tag1 === 'pivot' || d.tag1 === 'view'){
-    
-                //     window.open(d.embed_link, "_blank");
-        
-                // }else if(d.tag1 === 'workshop'){
-                   
-                //     window.open(d.embed_link, "_blank");
-                  
-                // }else if(d.tag1 === 'moving-update'){
-                   
-                  
-                // }else{
-                   
-                //    console.log('this in window')
-                //    window.open(d.embed_link, "_blank");
-                // }
-
-                
-
+              
            })
 
 
@@ -260,6 +242,9 @@ export async function renderTimeline(){
 
 
 
+        }else{
+            button.style('opacity', 0);
+            d3.selectAll('.event-sq').style('opacity', 1);
         }
     
         
