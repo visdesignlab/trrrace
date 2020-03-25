@@ -1,6 +1,7 @@
 import '../styles/index.scss';
 import * as d3 from 'd3';
 import * as d3Array from 'd3-array';
+import { makeButton } from './header';
 
 export async function renderTimeline(){
     d3.select('#main').selectAll('*').remove();
@@ -54,13 +55,18 @@ export async function renderTimeline(){
 
     svg.attr('height', height);
 
- 
+
     let labelWrapGroup = labelWrap.append('svg').append('g').attr('transform', `translate(100, 10)`);
    // let labelWrap = svg.append('g').classed('label-wrap', true).attr('transform', `translate(${width / 2}, 10)`);
     let tagLabel = labelWrapGroup.selectAll('.tag-label').data(tags).join('g').classed('tag-label', true);
     tagLabel.attr('transform', (d, i)=> `translate(${i*100}, 0)`)
     tagLabel.append('rect').attr('width', 95).attr('height', 20).attr('fill', (d)=> d.color).attr('opacity', .6)
-    tagLabel.append('text').text(d=> d.tag).style('font-size', 10).attr('y', 12).attr('x', 3)
+    tagLabel.append('text').text(d=> d.tag).style('font-size', 10).attr('y', 12).attr('x', 3);
+
+    //EXPERIMENTING
+    tagLabel.on('click', (d)=> {
+        console.log('tag', d);
+    });
 
     let timeScale = d3.scaleTime()
     .domain([d3.min(mappedData.map(m=>m.date)), d3.max(mappedData.map(m=>m.date))])
@@ -138,13 +144,14 @@ export async function renderTimeline(){
     let sideboxWrap = d3.select('body').append('div')
     sideboxWrap.attr('id','sidebox-wrap');
 
-    let button = sideboxWrap.append('button')//.on('click', (b)=> console.log('is this work'))
+   // let button = sideboxWrap.append('div').attr('id', 'side-button').append('button')//.on('click', (b)=> console.log('is this work'))
+    let button = makeButton(sideboxWrap.append('div').attr('id', 'side-button'), 'Explore This', null);
     button.style('opacity', '0');
-    button.text('Explore This');
+    //button.text('Explore This');
 
-    button.on('click', ()=> {
-        console.log('test');
-    });
+   // button.on('click', ()=> {
+       // console.log('test');
+   // });
 
     let sidebox = sideboxWrap.append('div').attr('id','sidebox');
 
@@ -153,29 +160,26 @@ export async function renderTimeline(){
     //eventSquares.on('mouseover', (d, i, n)=> {
     eventSquares.on('click', (d, i, n)=> {
 
-         let tooltip = d3.select('#tooltip').style('opacity', 0);
-
-         
-        // d3.select('#sidebox').remove();
+        let tooltip = d3.select('#tooltip').style('opacity', 0);
 
         sidebox.selectAll('*').remove();
 
-        console.log('testing')
-        
-       
+        console.log('testing', d.highlighted.split(','), d, d3.select(n[i]))
+
+
         if(clickedBool != d.Date_Range + '_' + d.Event){
 
             clickedBool = d.Date_Range + '_' + d.Event;
     
             button.style('opacity', '1.0');
            
-            sidebox.append('h3').text(`${d.Event} ${d.date}`)
-            sidebox.append('h3').text("Tags: ")
-            sidebox.append('h3').text(`${d.tag1}, ${d.tag2}, ${d.tag3}`)
+            sidebox.append('h3').text(`${d.Event} ${d.date}`);
+            sidebox.append('h3').text("Type: ");
+            sidebox.append('h3').text(`${d.tag1}, ${d.tag2}, ${d.tag3}`);
+            sidebox.append('html').html('</br>');
+            sidebox.append('h3').text("Tags: ");
+            sidebox.append('h3').text(`${d.highlighted.split(',')}`);
 
-           // sidebox.append('button').text('Explore This');
-           
-                     
             if(d.tag1 === 'sketch' || d.tag1 === 'pivot' || d.tag1 === 'view'){
     
                 let sideboxSVG = sidebox.append('svg').style('width', '1100px')

@@ -16,6 +16,7 @@ export function addNav(){
     makeButton(buttonWrap, 'Sketchbook', renderSketchbook); 
 }
 
-function makeButton(div, text, callback){
-    div.append('button').text(text).classed('btn btn--stripe', true).on('click', ()=> callback());
+export function makeButton(div, text, callback){
+    let button = div.append('button').text(text).classed('btn btn--stripe', true).on('click', ()=> callback != null? callback() : console.log('null'));
+    return button;
 }
