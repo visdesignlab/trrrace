@@ -136,7 +136,7 @@ export async function renderTimeline(){
 
     eventSquares.filter(f=> f.tag1 === 'sketch' || f.tag1 === 'view' || f.tag1 === 'pivot').append('rect')
     .attr('width', 10).attr('height', 10)
-    .attr('fill', (d, i)=> tags.filter(f=> f.tag === d.tag1)[0].color)
+    .style('fill', (d, i)=> tags.filter(f=> f.tag === d.tag1)[0].color)
     .attr('opacity', 0.6);
 
     let clickedBool = false;
@@ -155,7 +155,6 @@ export async function renderTimeline(){
 
         sidebox.selectAll('*').remove();
 
-        console.log('testing', d, d.highlighted)
         d3.select(n[i]).style('opacity', 1);
 
         if(clickedBool != d.Date_Range + '_' + d.Event){
@@ -164,7 +163,7 @@ export async function renderTimeline(){
     
             button.style('opacity', '1.0');
 
-            d3.selectAll('.event-sq').filter(f=> f.index_id != d.index_id).style('opacity', 0.2);
+            let otherEventSquares = d3.selectAll('.event-sq').filter(f=> f.index_id != d.index_id).style('opacity', 0.2);
            
             sidebox.append('h3').text(`${d.Event} ${d.date}`);
             sidebox.append('h3').text("Type: ");
@@ -172,11 +171,40 @@ export async function renderTimeline(){
             sidebox.append('html').html('</br>');
             sidebox.append('h3').text("Tags: ");
 
-            let badges = sidebox.append('div').selectAll('.badge').data(d.highlighted.split(',').filter(f=> f != ' ')).join('span').classed('badge badge-secondary', true)
+            let keyWords = d.highlighted.split(',').filter(f=> f != ' ').concat(d['highlighted domain'].split(',').filter(f=> f != ' '));
+
+            let badges = sidebox.append('div').selectAll('.badge').data(keyWords).join('span').classed('badge badge-secondary', true)
             badges.text(d=> d);
 
-            let badges2 = sidebox.append('div').selectAll('.badge2').data(d['highlighted domain'].split(',').filter(f=> f != ' ')).join('span').classed('badge2 badge-primary', true)
-            badges2.text(d=> d);
+            badges.on('click', (b)=> {
+
+                d3.selectAll('.event-sq.trace').style('opacity', .2);
+                d3.selectAll('.event-sq.trace').selectAll('rect').style('fill', (d, i)=> tags.filter(f=> f.tag === d.tag1)[0].color)
+                d3.selectAll('.event-sq.trace').classed('trace', false);
+
+
+                let test = b.split(' ').flatMap(m=> {
+                    let filteredEvents = otherEventSquares.filter(k=> {
+                        let otherKeyWords = k.highlighted.split(',').filter(f=> f != ' ').concat(k['highlighted domain'].split(',').filter(f=> f != ' '));
+                        return otherKeyWords.filter(w=> w.includes(m)).length > 0;
+                    });
+
+                    filteredEvents.classed('trace', true);
+                    d3.selectAll('.event-sq.trace').style('opacity', 1);
+                    d3.selectAll('.event-sq.trace').selectAll('rect').style('fill', 'red');
+
+                   
+                    return filteredEvents;
+
+                });
+
+                
+         
+
+                console.log('filteredEvents', test);
+                
+            });
+
 
             if(d.tag1 === 'sketch' || d.tag1 === 'pivot' || d.tag1 === 'view'){
     
@@ -218,7 +246,6 @@ export async function renderTimeline(){
                 .attr("xlink:href", `public/assets/${d.Sketch_ID}.gif`);
             }else{
 
-                console.log("testing, d.tag1", d.tag1);
                 sidebox.append('iframe').attr('src', d.embed_link).attr('frameborder',0);
 
             }

@@ -62,7 +62,11 @@ body {
   top:220px;
   right:10px;
   bottom:0;
-  pointer-events: none;
+  //pointer-events: none;
+}
+
+#sidebox .badge{
+  cursor: pointer;
 }
 
 
@@ -80,12 +84,9 @@ body {
 }
 
 #side-button button{
- 
     display: block;
     margin-left: auto;
     margin-right: auto;
-
-
 }
 
 #sidebox svg{
@@ -145,6 +146,21 @@ body {
 
 .timeline{
   width:100%;
+}
+
+.event-sq {
+  cursor: pointer;
+}
+
+.event-sq.trace{
+  cursor: pointer;
+  opacity: !important 1.0;
+}
+
+g.event-sq.trace rect{
+  
+  opacity: !important 1.0;
+  fill: !important red;
 }
 
 /**
