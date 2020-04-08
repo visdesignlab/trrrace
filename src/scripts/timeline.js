@@ -144,22 +144,18 @@ export async function renderTimeline(){
     let sideboxWrap = d3.select('body').append('div')
     sideboxWrap.attr('id','sidebox-wrap');
 
-   // let button = sideboxWrap.append('div').attr('id', 'side-button').append('button')//.on('click', (b)=> console.log('is this work'))
     let button = makeButton(sideboxWrap.append('div').attr('id', 'side-button'), 'Explore This', null);
     button.style('opacity', '0');
 
     let sidebox = sideboxWrap.append('div').attr('id','sidebox');
 
-    console.log('sidebox',sideboxWrap)
-   
-    //eventSquares.on('mouseover', (d, i, n)=> {
     eventSquares.on('click', (d, i, n)=> {
 
         let tooltip = d3.select('#tooltip').style('opacity', 0);
 
         sidebox.selectAll('*').remove();
 
-        console.log('testing', d, d3.selectAll('.event-sq').filter(f=> f.index_id != d.index_id))
+        console.log('testing', d, d.highlighted)
         d3.select(n[i]).style('opacity', 1);
 
         if(clickedBool != d.Date_Range + '_' + d.Event){
@@ -178,6 +174,9 @@ export async function renderTimeline(){
 
             let badges = sidebox.append('div').selectAll('.badge').data(d.highlighted.split(',').filter(f=> f != ' ')).join('span').classed('badge badge-secondary', true)
             badges.text(d=> d);
+
+            let badges2 = sidebox.append('div').selectAll('.badge2').data(d['highlighted domain'].split(',').filter(f=> f != ' ')).join('span').classed('badge2 badge-primary', true)
+            badges2.text(d=> d);
 
             if(d.tag1 === 'sketch' || d.tag1 === 'pivot' || d.tag1 === 'view'){
     
@@ -222,37 +221,17 @@ export async function renderTimeline(){
                 console.log("testing, d.tag1", d.tag1);
                 sidebox.append('iframe').attr('src', d.embed_link).attr('frameborder',0);
 
-               
-            
-             
-
             }
-
-    
             button.on('click', ()=> {
-
-
                 window.open(d.embed_link, "_blank");
-
-              
-           })
-
-
-
-
-
+           });
 
         }else{
             button.style('opacity', 0);
             d3.selectAll('.event-sq').style('opacity', 1);
         }
-    
-        
 
-
-
-
-    })
+    });
     // .on('mouseout', ()=> {
     //     let tooltip = d3.select('#tooltip').style('opacity', 0);
     //     d3.select('#sidebox').remove();
