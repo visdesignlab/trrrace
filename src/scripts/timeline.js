@@ -12,8 +12,6 @@ export async function renderTimeline(){
     let data = await d3.csv('public/data/timeline.csv');
     let timeFormat = d3.timeFormat("%m/%d/%Y");
 
-
-
     let mappedData = data.map(m=> {
         m.date = new Date(m.Date_Range);
         return m;
@@ -54,7 +52,6 @@ export async function renderTimeline(){
     let height = (mappedData.length * 40) + 50;
 
     svg.attr('height', height);
-
 
     let labelWrapGroup = labelWrap.append('svg').append('g').attr('transform', `translate(100, 10)`);
    // let labelWrap = svg.append('g').classed('label-wrap', true).attr('transform', `translate(${width / 2}, 10)`);
@@ -181,7 +178,6 @@ export async function renderTimeline(){
                 d3.selectAll('.event-sq.trace').style('opacity', .2);
                 d3.selectAll('.event-sq.trace').selectAll('rect').style('fill', (d, i)=> tags.filter(f=> f.tag === d.tag1)[0].color)
                 d3.selectAll('.event-sq.trace').classed('trace', false);
-
 
                 let test = b.split(' ').flatMap(m=> {
                     let filteredEvents = otherEventSquares.filter(k=> {

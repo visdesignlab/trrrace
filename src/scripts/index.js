@@ -4,6 +4,8 @@ import { addCitations } from './citationLoader';
 import { addNav } from './header';
 import { renderLaunch } from './landing';
 import { renderTimeline } from './timeline';
+import { loadTextFile, casestudyOb } from './casestudies';
+
 
 /**
  * This is the background Section
@@ -24,6 +26,8 @@ var Tooltip = d3.select("#tooltip")
  */
 renderLaunch();
 //renderTimeline();
+
+
 
 
 

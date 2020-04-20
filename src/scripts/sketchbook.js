@@ -4,7 +4,6 @@ import * as d3 from 'd3';
 export function renderSketchbook(){
     d3.select('#main').selectAll('*').remove();
  
-
     let sketchWrap = d3.select('#main').append('div').classed('sketch-wrap', true);
 
     let imageList = [

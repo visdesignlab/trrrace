@@ -4,6 +4,7 @@ import { renderCitations } from './citationLoader';
 import { renderLaunch } from './landing';
 import { renderTimeline } from './timeline';
 import { renderSketchbook } from './sketchbook';
+import {renderCaseStudy} from './casestudies';
 
 export function addNav(){
 
@@ -12,8 +13,10 @@ export function addNav(){
     d3.select('#header').select('h1').on('click', ()=> renderLaunch());
     
     makeButton(buttonWrap, 'Timeline', renderTimeline);
+    makeButton(buttonWrap, 'Case Study', renderCaseStudy); 
     makeButton(buttonWrap, 'References', renderCitations); 
-    makeButton(buttonWrap, 'Sketchbook', renderSketchbook); 
+    //makeButton(buttonWrap, 'Sketchbook', renderSketchbook); 
+    
 }
 
 export function makeButton(div, text, callback){
