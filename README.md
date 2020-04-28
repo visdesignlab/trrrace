@@ -1,6 +1,6 @@
 # Audit Trail
 
-[View Audit Trail](http://vdl.sci.utah.edu/evo-bio-audit/)
+[View Audit Trail](http://vdl.sci.utah.edu/trrrace/)
 
 ### Installation
 

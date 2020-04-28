@@ -202,7 +202,7 @@ export async function renderTimeline(){
             });
 
 
-            if(d.tag1 === 'sketch' || d.tag1 === 'pivot' || d.tag1 === 'view'){
+            if(d.tag1 === 'sketch/view' || d.tag1 === 'pivot' || d.tag1 === 'view'){
     
                 let sideboxSVG = sidebox.append('svg').style('width', '1100px')
                 .style('height', '600px');
@@ -210,7 +210,7 @@ export async function renderTimeline(){
                 let im = sideboxSVG.append("svg:image")
                 .classed('sketch', true);
     
-                im.style('width', '1100px')
+                im.style('width', '1000px')
                 .attr('y', 0)
                 .attr('x', 0)
                 .attr("xlink:href", `public/assets/${d.Sketch_ID}.png`);
@@ -242,7 +242,7 @@ export async function renderTimeline(){
                 .attr("xlink:href", `public/assets/${d.Sketch_ID}.gif`);
             }else{
 
-                sidebox.append('iframe').attr('src', d.embed_link).attr('frameborder',0);
+                sidebox.append('iframe').style('width', '900px').attr('src', d.embed_link).attr('frameborder',0);
 
             }
             button.on('click', ()=> {

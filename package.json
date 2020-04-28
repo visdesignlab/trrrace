@@ -1,5 +1,5 @@
 {
-  "name": "Evo-Bio-Design-Study",
+  "name": "Trrrace",
   "version": "1.0.0",
   "description": "Audit Trail for Design Study",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/visdesignlab/evo-bio-audit.git"
+    "url": "git+https://github.com/visdesignlab/trrrace.git"
   },
   "keywords": [
     "audit trail",
@@ -18,7 +18,7 @@
   "author": "Jen",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/visdesignlab/evo-bio-audit/issues"
+    "url": "https://github.com/visdesignlab/trrrace/issues"
   },
   "devDependencies": {
     "@babel/core": "^7.7.5",
