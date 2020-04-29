@@ -3,10 +3,10 @@ import * as d3 from 'd3';
 import * as d3Array from 'd3-array';
 import { makeButton } from './header';
 
-export async function renderTimeline(traceType, traceId){
+export async function renderTimeline(traceId){
     d3.select('#main').selectAll('*').remove();
 
-    console.log('type',traceType);
+   
 
     let labelWrap = d3.select('#main').append('div').classed('label-wrap-div', true);
     
@@ -272,13 +272,13 @@ export async function renderTimeline(traceType, traceId){
         .attr('fill', '#5D6D7E');
 
 
-    urlFun(traceType, traceId, sidebox, button);
+    urlFun(traceId, sidebox, button);
 
 }
 
-    function urlFun(type, link, sidebox, button, clickedBool){
+    function urlFun(link, sidebox, button, clickedBool){
 
-        console.log(type, link);
+        console.log(link);
     
         button.style('opacity', '1.0');
 
@@ -301,11 +301,13 @@ export async function renderTimeline(traceType, traceId){
         let badges = sidebox.append('div').selectAll('.badge').data(keyWords).join('span').classed('badge badge-secondary', true)
         badges.text(d=> d);
 
-        if(type === 'doc'){
+        let type = theData.type;
+
+        if(type === 'email/text' || type === 'notes' || type === 'pdf'){
 
             sidebox.append('iframe').style('width', '900px').attr('src', theData.embed_link).attr('frameborder',0);
 
-        }else if(type === 'image'){
+        }else if(type === 'sketch/view' || 'image'){
 
             sidebox.style('overflow: auto;')
 
