@@ -64,6 +64,7 @@ body {
   bottom:0;
   //pointer-events: none;
   overflow-y: scroll;
+  width:700px;
 }
 
 #sidebox .badge{
@@ -76,11 +77,12 @@ body {
   top:150px;
   right:10px;
   bottom:0;
+  width:700px;
   //pointer-events: none;
 }
 
 #side-button{
-  margin-right: 200px;
+  margin:auto;
   width: 250px;
 }
 

@@ -3,10 +3,10 @@ import * as d3 from 'd3';
 import * as d3Array from 'd3-array';
 import { makeButton } from './header';
 
+const lastClicked = [null];
+
 export async function renderTimeline(traceId){
     d3.select('#main').selectAll('*').remove();
-
-   
 
     let labelWrap = d3.select('#main').append('div').classed('label-wrap-div', true);
     
@@ -38,10 +38,6 @@ export async function renderTimeline(traceId){
         '#F0FF00',
         '#2AFF00'
     ];
-
-    let rangeInIdaho = [['05-13-19', '07-31-19'], ['10-17-19', '10-19-19'], ['02-02-20', '02-07-20']];
-
-    let mileEvents = [['started to record audio','6-12-19']];
 
     let tags = Array.from(new Set([...data.filter(f=> f.tag1 != 'phase' && f.tag1 != 'event')].map(m=> m.tag1)))
     .map((m, i)=> {
@@ -138,7 +134,7 @@ export async function renderTimeline(traceId){
     .style('fill', (d, i)=> tags.filter(f=> f.tag === d.tag1)[0].color)
     .attr('opacity', 0.6);
 
-    let clickedBool = false;
+
 
     let sideboxWrap = d3.select('body').append('div')
     sideboxWrap.attr('id','sidebox-wrap');
@@ -154,101 +150,7 @@ export async function renderTimeline(traceId){
 
         sidebox.selectAll('*').remove();
 
-        d3.select(n[i]).style('opacity', 1);
-
-        if(clickedBool != d.Date_Range + '_' + d.Event){
-
-            clickedBool = d.Date_Range + '_' + d.Event;
-    
-            button.style('opacity', '1.0');
-
-            let otherEventSquares = d3.selectAll('.event-sq').filter(f=> f.index_id != d.index_id).style('opacity', 0.2);
-           
-            sidebox.append('h3').text(`${d.Event} ${d.date}`);
-            sidebox.append('h3').text("Type: ");
-            sidebox.append('h3').text(`${d.tag1}, ${d.tag2}, ${d.tag3}`);
-            sidebox.append('html').html('</br>');
-            sidebox.append('h3').text("Tags: ");
-
-            let keyWords = d.highlighted.split(',').filter(f=> f != ' ').concat(d['highlighted domain'].split(',').filter(f=> f != ' '));
-
-            let badges = sidebox.append('div').selectAll('.badge').data(keyWords).join('span').classed('badge badge-secondary', true)
-            badges.text(d=> d);
-
-            badges.on('click', (b)=> {
-
-                d3.selectAll('.event-sq.trace').style('opacity', .2);
-                d3.selectAll('.event-sq.trace').selectAll('rect').style('fill', (d, i)=> tags.filter(f=> f.tag === d.tag1)[0].color)
-                d3.selectAll('.event-sq.trace').classed('trace', false);
-
-                let test = b.split(' ').flatMap(m=> {
-                    let filteredEvents = otherEventSquares.filter(k=> {
-                        let otherKeyWords = k.highlighted.split(',').filter(f=> f != ' ').concat(k['highlighted domain'].split(',').filter(f=> f != ' '));
-                        return otherKeyWords.filter(w=> w.includes(m)).length > 0;
-                    });
-
-                    filteredEvents.classed('trace', true);
-                    d3.selectAll('.event-sq.trace').style('opacity', 1);
-                    d3.selectAll('.event-sq.trace').selectAll('rect').style('fill', 'red');
-
-                   
-                    return filteredEvents;
-
-                });
-
-            });
-
-            if(d.tag1 === 'sketch/view' || d.tag1 === 'pivot' || d.tag1 === 'view'){
-    
-                let sideboxSVG = sidebox.append('svg').style('width', '1100px')
-                .style('height', '600px');
-    
-                let im = sideboxSVG.append("svg:image")
-                .classed('sketch', true);
-    
-                im.style('width', '1000px')
-                .attr('y', 0)
-                .attr('x', 0)
-                .attr("xlink:href", `public/assets/${d.Sketch_ID}.png`);
-    
-            }else if(d.tag1 === 'workshop'){
-               
-                let sideboxSVG = sidebox.append('svg').style('width', '1100px')
-                .style('height', '600px');
-    
-                let im = sideboxSVG.append("svg:image")
-                .classed('sketch', true);
-    
-                im.style('width', '900px')
-                .attr('y', 0)
-                .attr('x', 0)
-                .attr("xlink:href", `public/assets/${d.Sketch_ID}.png`);
-
-            }else if(d.tag1 === 'moving-update'){
-               
-                let sideboxSVG = sidebox.append('svg').style('width', '1100px')
-                .style('height', '600px');
-    
-                let im = sideboxSVG.append("svg:image")
-                .classed('sketch', true);
-    
-                im.style('width', '900px')
-                .attr('y', 0)
-                .attr('x', 0)
-                .attr("xlink:href", `public/assets/${d.Sketch_ID}.gif`);
-            }else{
-
-                sidebox.append('iframe').style('width', '900px').attr('src', d.embed_link).attr('frameborder',0);
-
-            }
-            button.on('click', ()=> {
-                window.open(d.embed_link, "_blank");
-           });
-
-        }else{
-            button.style('opacity', 0);
-            d3.selectAll('.event-sq').style('opacity', 1);
-        }
+        urlFun(d.index_id, sidebox, button);
 
     });
 
@@ -276,54 +178,89 @@ export async function renderTimeline(traceId){
 
 }
 
-    function urlFun(link, sidebox, button, clickedBool){
+    function urlFun(id, sidebox, button){
 
-        console.log(link);
-    
         button.style('opacity', '1.0');
 
-        let chosenSquare = d3.selectAll('.event-sq').filter(f=> f.index_id === link).style('opacity', 1);
+        let chosenSquare = d3.selectAll('.event-sq').filter(f=> f.index_id === id).style('opacity', 1);
 
         let theData = chosenSquare.data()[0];
 
-        clickedBool = theData.Date_Range + '_' + theData.Event;
+        console.log('clicked bool',lastClicked, theData.Date_Range + '_' + theData.Event);
 
-        let otherEventSquares = d3.selectAll('.event-sq').filter(f=> f.index_id != link).style('opacity', 0.2);
-       
-        sidebox.append('h3').text(`${theData.Event} ${theData.date}`);
-        sidebox.append('h3').text("Type: ");
-        sidebox.append('h3').text(`${theData.tag1}, ${theData.tag2}, ${theData.tag3}`);
-        sidebox.append('html').html('</br>');
-        sidebox.append('h3').text("Tags: ");
+        if(lastClicked[lastClicked.length - 1] != theData.Date_Range + '_' + theData.Event){
 
-        let keyWords = theData.highlighted.split(',').filter(f=> f != ' ').concat(theData['highlighted domain'].split(',').filter(f=> f != ' '));
+            lastClicked.push(theData.Date_Range + '_' + theData.Event);
 
-        let badges = sidebox.append('div').selectAll('.badge').data(keyWords).join('span').classed('badge badge-secondary', true)
-        badges.text(d=> d);
+            let otherEventSquares = d3.selectAll('.event-sq').filter(f=> f.index_id != id).style('opacity', 0.2);
+        
+            sidebox.append('h3').text(`${theData.Event} ${theData.date}`);
+            sidebox.append('h3').text("Type: ");
+            sidebox.append('h3').text(`${theData.tag1}, ${theData.tag2}, ${theData.tag3}`);
+            sidebox.append('html').html('</br>');
+            sidebox.append('h3').text("Tags: ");
 
-        let type = theData.type;
+            let keyWords = theData.highlighted.split(',').filter(f=> f != ' ').concat(theData['highlighted domain'].split(',').filter(f=> f != ' '));
 
-        if(type === 'email/text' || type === 'notes' || type === 'pdf'){
+            let badges = sidebox.append('div').selectAll('.badge').data(keyWords).join('span').classed('badge badge-secondary', true)
+            badges.text(d=> d);
 
-            sidebox.append('iframe').style('width', '900px').attr('src', theData.embed_link).attr('frameborder',0);
+            badges.on('click', (b)=> {
 
-        }else if(type === 'sketch/view' || 'image'){
+                d3.selectAll('.event-sq.trace').style('opacity', .2);
+                d3.selectAll('.event-sq.trace').selectAll('rect').style('fill', (d, i)=> tags.filter(f=> f.tag === d.tag1)[0].color)
+                d3.selectAll('.event-sq.trace').classed('trace', false);
 
-            sidebox.style('overflow: auto;')
+                let test = b.split(' ').flatMap(m=> {
+                    let filteredEvents = otherEventSquares.filter(k=> {
+                        let otherKeyWords = k.highlighted.split(',').filter(f=> f != ' ').concat(k['highlighted domain'].split(',').filter(f=> f != ' '));
+                        return otherKeyWords.filter(w=> w.includes(m)).length > 0;
+                    });
 
-            let sideboxSVG = sidebox.append('svg').style('width', '600px')
-            .style('height', '600px');
+                    filteredEvents.classed('trace', true);
+                    d3.selectAll('.event-sq.trace').style('opacity', 1);
+                    d3.selectAll('.event-sq.trace').selectAll('rect').style('fill', 'red');
 
-            let im = sideboxSVG.append("svg:image")
-            .classed('sketch', true);
+                    return filteredEvents;
 
-            im.style('width', '600px')
-            .attr('y', 0)
-            .attr('x', 0)
-            .attr("xlink:href", `public/assets/${theData.Sketch_ID}.png`);
+                });
+
+            });
+
+            button.on('click', ()=> {
+                window.open(theData.embed_link, "_blank");
+            });
+
+            let type = theData.type;
+
+            if(type === 'email/text' || type === 'notes' || type === 'pdf'){
+
+                sidebox.append('iframe').style('width', '650px').attr('src', theData.embed_link).attr('frameborder',0);
+
+            }else if(type === 'sketch/view' || 'image'){
+
+                sidebox.style('overflow: auto;')
+
+                let sideboxSVG = sidebox.append('svg').style('width', '650px')
+                .style('height', '600px');
+
+                let im = sideboxSVG.append("svg:image")
+                .classed('sketch', true);
+
+                im.style('width', '650px')
+                .attr('y', 0)
+                .attr('x', 0)
+                .attr("xlink:href", `public/assets/${theData.Sketch_ID}.png`);
+
+            }else{
+                console.error('type not found');
+            }
 
         }else{
-            console.error('type not found');
+            console.log('does this work');
+            button.style('opacity', 0);
+            d3.selectAll('.event-sq').style('opacity', 1);
+           
         }
 
         
