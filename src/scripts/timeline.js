@@ -43,12 +43,17 @@ export async function renderTimeline(traceId){
 
     let mileEvents = [['started to record audio','6-12-19']];
 
-    let tags = Array.from(new Set([...data].map(m=> m.tag1)))
+    let tags = Array.from(new Set([...data.filter(f=> f.tag1 != 'phase' && f.tag1 != 'event')].map(m=> m.tag1)))
     .map((m, i)=> {
         return {tag:m, color:colorKeeper[i]}
     });
 
-    let groupedData = Array.from(d3Array.group(mappedData, d => timeFormat(d.date)));
+    let groupedData = Array.from(d3Array.group(mappedData.filter(f=> f.tag1 != 'phase' && f.tag1 != 'event'), d => timeFormat(d.date)));
+
+    let events = Array.from(d3Array.group(mappedData.filter(f=> f.tag1 === 'phase' || f.tag1 === 'event'), d => d.Event));
+   
+
+    console.log(events)
 
     let width = svg.node().getBoundingClientRect().width;
     let height = (mappedData.length * 40) + 50;
@@ -73,34 +78,29 @@ export async function renderTimeline(traceId){
 
     let circleScale = d3.scaleLinear().domain([1, 15]).range([3, 10]);
 
-    let rangeBox = svg.selectAll('rect.visit').data(rangeInIdaho)
+    let rangeBox = svg.selectAll('rect.visit').data(events.filter(f=> f[1].length > 1))
         .join('rect')
         .classed('visit', true)
         .attr('width', 2000)
-        .attr('height', d=> (timeScale(new Date(d[1])) - timeScale(new Date(d[0])) + 50))
-        .attr('y', d=> timeScale(new Date(d[0]))-20)
+        .attr('height', d=> {
+            console.log('d', timeScale(new Date(d[1][1].Date_Range)) - timeScale(new Date(d[1][0].Date_Range)) + 50);
+            return (timeScale(new Date(d[1][1].Date_Range)) - timeScale(new Date(d[1][0].Date_Range)) + 20)})
+        .attr('y', d=> timeScale(new Date(d[1][0].Date_Range))+10)
         .attr('x', 30)
         .attr('fill', 'gray')
         .attr('opacity', 0.1);
-
-    let rangeLabel = svg.selectAll('text.visit').data(rangeInIdaho).join('text').text('Working at Harmon Lab')
-                    .attr('y', d=> timeScale(new Date(d[0])) + 2)
-                    .attr('x', 120)
-                    .attr('fill', 'gray')
-                    .style('font-size', '11px');
-
     
-    let milesLine = svg.selectAll('g.milestone').data(mileEvents).join('g').classed('milestone', true);
-    milesLine.attr('transform', d=> `translate(0, ${timeScale(new Date(d[1]))+ 27})`)
+    let milesLine = svg.selectAll('g.milestone').data(events).join('g').classed('milestone', true);
+    milesLine.attr('transform', d=> `translate(0, ${timeScale(new Date(d[1][0].Date_Range))+ 10})`)
     milesLine.append('line')  
     .attr('y1', 0)
     .attr('y2', 0)
     .attr('x1', 0)
-    .attr('x2', 600)
+    .attr('x2', 650)
     .style('stroke-width', '0.5px')
     .style('stroke', 'red');
 
-    milesLine.append('text').text(d=> d[0]).attr('x', 600).attr('y', 2).style('font-size', '11px');
+    milesLine.append('text').text(d=> d[0]).attr('x', 650).attr('y', 2).style('font-size', '11px');
 
 
     let wrapGroup = svg.append('g').classed('time-wrap', true).attr('transform', `translate(10, 20)`);
