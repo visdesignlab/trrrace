@@ -272,23 +272,21 @@ export async function renderTimeline(traceType, traceId){
         .attr('fill', '#5D6D7E');
 
 
-    urlFun(traceType, traceId, sidebox);
+    urlFun(traceType, traceId, sidebox, button);
 
 }
 
-    function urlFun(type, link, sidebox){
+    function urlFun(type, link, sidebox, button, clickedBool){
 
         console.log(type, link);
-
-        //clickedBool = d.Date_Range + '_' + d.Event;
     
-        // button.style('opacity', '1.0');
+        button.style('opacity', '1.0');
 
         let chosenSquare = d3.selectAll('.event-sq').filter(f=> f.index_id === link).style('opacity', 1);
 
         let theData = chosenSquare.data()[0];
 
-        console.log(theData)
+        clickedBool = theData.Date_Range + '_' + theData.Event;
 
         let otherEventSquares = d3.selectAll('.event-sq').filter(f=> f.index_id != link).style('opacity', 0.2);
        
@@ -298,11 +296,34 @@ export async function renderTimeline(traceType, traceId){
         sidebox.append('html').html('</br>');
         sidebox.append('h3').text("Tags: ");
 
-        // let keyWords = d.highlighted.split(',').filter(f=> f != ' ').concat(d['highlighted domain'].split(',').filter(f=> f != ' '));
+        let keyWords = theData.highlighted.split(',').filter(f=> f != ' ').concat(theData['highlighted domain'].split(',').filter(f=> f != ' '));
 
-        // let badges = sidebox.append('div').selectAll('.badge').data(keyWords).join('span').classed('badge badge-secondary', true)
-        // badges.text(d=> d);
+        let badges = sidebox.append('div').selectAll('.badge').data(keyWords).join('span').classed('badge badge-secondary', true)
+        badges.text(d=> d);
 
-        sidebox.append('iframe').style('width', '900px').attr('src', theData.embed_link).attr('frameborder',0);
+        if(type === 'doc'){
+
+            sidebox.append('iframe').style('width', '900px').attr('src', theData.embed_link).attr('frameborder',0);
+
+        }else if(type === 'image'){
+
+            sidebox.style('overflow: auto;')
+
+            let sideboxSVG = sidebox.append('svg').style('width', '600px')
+            .style('height', '600px');
+
+            let im = sideboxSVG.append("svg:image")
+            .classed('sketch', true);
+
+            im.style('width', '600px')
+            .attr('y', 0)
+            .attr('x', 0)
+            .attr("xlink:href", `public/assets/${theData.Sketch_ID}.png`);
+
+        }else{
+            console.error('type not found');
+        }
+
+        
        
     }
