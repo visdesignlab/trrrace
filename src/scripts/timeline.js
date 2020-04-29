@@ -3,8 +3,10 @@ import * as d3 from 'd3';
 import * as d3Array from 'd3-array';
 import { makeButton } from './header';
 
-export async function renderTimeline(){
+export async function renderTimeline(traceType){
     d3.select('#main').selectAll('*').remove();
+
+    console.log('type',traceType);
 
     let labelWrap = d3.select('#main').append('div').classed('label-wrap-div', true);
     
@@ -194,13 +196,7 @@ export async function renderTimeline(){
 
                 });
 
-                
-         
-
-                console.log('filteredEvents', test);
-                
             });
-
 
             if(d.tag1 === 'sketch/view' || d.tag1 === 'pivot' || d.tag1 === 'view'){
     
@@ -255,18 +251,6 @@ export async function renderTimeline(){
         }
 
     });
-    // .on('mouseout', ()=> {
-    //     let tooltip = d3.select('#tooltip').style('opacity', 0);
-    //     d3.select('#sidebox').remove();
-    // });
-
-    // eventSquares.filter(f=> f.tag1 === 'presentation').append('a')
-    // .attr("xlink:href", d=> {
-    //     return `public/assets/${d.Sketch_ID}.pdf`}).append('rect')
-    //     .attr('width', 10)
-    //     .attr('height', 10)
-    //     .attr('fill', (d, i)=> tags
-    //     .filter(f=> f.tag === d.tag1)[0].color).attr('opacity', 0.6);
 
     let eventLabels = eventGroups.selectAll('text.event-label').data(d=> [d]).join('text')
         .classed('event-label', true)
@@ -286,4 +270,37 @@ export async function renderTimeline(){
         .style('text-anchor', 'end')
         .style('font-size', '10px')
         .attr('fill', '#5D6D7E');
+
+
+    urlFun(traceType, 'https://docs.google.com/document/d/e/2PACX-1vQuvlEWTPSuLXok0YNFFwHd0xbAxNbgO2SLGqGFVFzmdZ3cbceXBlb77AWpdj5CkexbrZRPTF560TLJ/pub?embedded=true', sidebox);
+
+}
+
+    function urlFun(type, link, sidebox){
+
+        console.log(type, link);
+
+        //clickedBool = d.Date_Range + '_' + d.Event;
+    
+        // button.style('opacity', '1.0');
+
+        let chosenSquare = d3.selectAll('.event-sq').filter(f=> f.embed_link === link).style('opacity', 1);
+
+        let theData = chosenSquare.data()[0];
+
+        let otherEventSquares = d3.selectAll('.event-sq').filter(f=> f.embed_link != link).style('opacity', 0.2);
+       
+        sidebox.append('h3').text(`${theData.Event} ${theData.date}`);
+        sidebox.append('h3').text("Type: ");
+        sidebox.append('h3').text(`${theData.tag1}, ${theData.tag2}, ${theData.tag3}`);
+        sidebox.append('html').html('</br>');
+        sidebox.append('h3').text("Tags: ");
+
+        // let keyWords = d.highlighted.split(',').filter(f=> f != ' ').concat(d['highlighted domain'].split(',').filter(f=> f != ' '));
+
+        // let badges = sidebox.append('div').selectAll('.badge').data(keyWords).join('span').classed('badge badge-secondary', true)
+        // badges.text(d=> d);
+
+        sidebox.append('iframe').style('width', '900px').attr('src', link).attr('frameborder',0);
+       
     }
