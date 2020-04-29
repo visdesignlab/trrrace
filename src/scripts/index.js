@@ -25,14 +25,14 @@ var Tooltip = d3.select("#tooltip")
 
 let params = (new URL(document.location)).searchParams;
 
-let timeline = params.get('timeline'); 
-let casestudy = params.get('casestudy');
+let view = params.get('view'); 
 
-if(timeline){
+
+if(view === 'timeline'){
     let traceType = params.get('type');
     let traceId = params.get('id');
     renderTimeline(traceType, traceId);
-}else if(casestudy){
+}else if(view === 'caseStudy'){
     renderCaseStudy();
 }else{
     renderLaunch();
