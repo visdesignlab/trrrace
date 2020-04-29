@@ -30,7 +30,8 @@ let casestudy = params.get('casestudy');
 
 if(timeline){
     let traceType = params.get('type');
-    renderTimeline(traceType);
+    let traceId = params.get('id');
+    renderTimeline(traceType, traceId);
 }else if(casestudy){
     renderCaseStudy();
 }else{

@@ -3,7 +3,7 @@ import * as d3 from 'd3';
 import * as d3Array from 'd3-array';
 import { makeButton } from './header';
 
-export async function renderTimeline(traceType){
+export async function renderTimeline(traceType, traceId){
     d3.select('#main').selectAll('*').remove();
 
     console.log('type',traceType);
@@ -272,7 +272,7 @@ export async function renderTimeline(traceType){
         .attr('fill', '#5D6D7E');
 
 
-    urlFun(traceType, 'https://docs.google.com/document/d/e/2PACX-1vQuvlEWTPSuLXok0YNFFwHd0xbAxNbgO2SLGqGFVFzmdZ3cbceXBlb77AWpdj5CkexbrZRPTF560TLJ/pub?embedded=true', sidebox);
+    urlFun(traceType, traceId, sidebox);
 
 }
 
@@ -284,11 +284,13 @@ export async function renderTimeline(traceType){
     
         // button.style('opacity', '1.0');
 
-        let chosenSquare = d3.selectAll('.event-sq').filter(f=> f.embed_link === link).style('opacity', 1);
+        let chosenSquare = d3.selectAll('.event-sq').filter(f=> f.index_id === link).style('opacity', 1);
 
         let theData = chosenSquare.data()[0];
 
-        let otherEventSquares = d3.selectAll('.event-sq').filter(f=> f.embed_link != link).style('opacity', 0.2);
+        console.log(theData)
+
+        let otherEventSquares = d3.selectAll('.event-sq').filter(f=> f.index_id != link).style('opacity', 0.2);
        
         sidebox.append('h3').text(`${theData.Event} ${theData.date}`);
         sidebox.append('h3').text("Type: ");
@@ -301,6 +303,6 @@ export async function renderTimeline(traceType){
         // let badges = sidebox.append('div').selectAll('.badge').data(keyWords).join('span').classed('badge badge-secondary', true)
         // badges.text(d=> d);
 
-        sidebox.append('iframe').style('width', '900px').attr('src', link).attr('frameborder',0);
+        sidebox.append('iframe').style('width', '900px').attr('src', theData.embed_link).attr('frameborder',0);
        
     }
