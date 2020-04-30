@@ -94,9 +94,10 @@ export async function renderTimeline(traceId){
     .attr('x1', 0)
     .attr('x2', 650)
     .style('stroke-width', '0.5px')
-    .style('stroke', 'red');
+    .style('stroke-dasharray',"4")
+    .style('stroke', 'gray');
 
-    milesLine.append('text').text(d=> d[0]).attr('x', 650).attr('y', 2).style('font-size', '11px');
+    milesLine.append('text').text(d=> d[0]).attr('x', 654).attr('y', 2).style('font-size', '11px').attr('fill', 'gray');
 
 
     let wrapGroup = svg.append('g').classed('time-wrap', true).attr('transform', `translate(10, 20)`);
@@ -123,9 +124,6 @@ export async function renderTimeline(traceId){
     eventSquares.attr('transform', (d, i)=> `translate(${13 + (i * 12)}, -5)`);
 
     let aDrive = eventSquares
-   //  .filter(f=> f.tag1 != 'sketch' && f.tag1 != 'presentation' && f.tag1 != 'pivot' && f.tag1 != 'view').append('a')
-    // .attr("xlink:href", d=> {
-    //     return d.Drive_Link});
     aDrive.append('rect').attr('width', 10).attr('height', 10).attr('fill', (d, i)=> tags
         .filter(f=> f.tag === d.tag1)[0].color).attr('opacity', 0.6);
 
@@ -174,7 +172,9 @@ export async function renderTimeline(traceId){
         .attr('fill', '#5D6D7E');
 
 
-    urlFun(traceId, sidebox, button);
+    if(traceId){
+        urlFun(traceId, sidebox, button);
+    } 
 
 }
 
@@ -186,26 +186,31 @@ export async function renderTimeline(traceId){
 
         let theData = chosenSquare.data()[0];
 
-        console.log('clicked bool',lastClicked, theData.Date_Range + '_' + theData.Event);
-
         if(lastClicked[lastClicked.length - 1] != theData.Date_Range + '_' + theData.Event){
 
             lastClicked.push(theData.Date_Range + '_' + theData.Event);
 
             let otherEventSquares = d3.selectAll('.event-sq').filter(f=> f.index_id != id).style('opacity', 0.2);
-        
-            sidebox.append('h3').text(`${theData.Event} ${theData.date}`);
-            sidebox.append('h3').text("Type: ");
-            sidebox.append('h3').text(`${theData.tag1}, ${theData.tag2}, ${theData.tag3}`);
-            sidebox.append('html').html('</br>');
-            sidebox.append('h3').text("Tags: ");
+            let typeTags = [theData.tag1, theData.tag2, theData.tag3].filter(f=> f != '').toString();
+
+            console.log(typeTags);
+
+
+            sidebox.append('h6').text(`${theData.Event} ${theData.date}`);
+            sidebox.append('h5').text(`Type: ${typeTags}`);
+            sidebox.append('h5').text("Tags: ");
 
             let keyWords = theData.highlighted.split(',').filter(f=> f != ' ').concat(theData['highlighted domain'].split(',').filter(f=> f != ' '));
 
             let badges = sidebox.append('div').selectAll('.badge').data(keyWords).join('span').classed('badge badge-secondary', true)
             badges.text(d=> d);
 
-            badges.on('click', (b)=> {
+            badges.on('click', (b, i, n)=> {
+
+                d3.selectAll(n).filter((f, j)=> j != i).attr('class', 'badge badge-secondary');
+
+                d3.select(n[i]).attr('class', 'badge badge-warning');
+               
 
                 d3.selectAll('.event-sq.trace').style('opacity', .2);
                 d3.selectAll('.event-sq.trace').selectAll('rect').style('fill', (d, i)=> tags.filter(f=> f.tag === d.tag1)[0].color)
