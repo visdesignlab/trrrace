@@ -17,7 +17,8 @@ export async function renderTimeline(traceId){
     let mappedData = data.map(m=> {
         m.date = new Date(m.Date_Range);
         return m;
-    })
+    });
+
     let colorKeeper = [
         '#e74c3c',
         '#884ea0',
@@ -184,6 +185,8 @@ export async function renderTimeline(traceId){
 
         let chosenSquare = d3.selectAll('.event-sq').filter(f=> f.index_id === id).style('opacity', 1);
 
+        console.log(chosenSquare, chosenSquare.data())
+
         let theData = chosenSquare.data()[0];
 
         if(lastClicked[lastClicked.length - 1] != theData.Date_Range + '_' + theData.Event){
@@ -193,8 +196,7 @@ export async function renderTimeline(traceId){
             let otherEventSquares = d3.selectAll('.event-sq').filter(f=> f.index_id != id).style('opacity', 0.2);
             let typeTags = [theData.tag1, theData.tag2, theData.tag3].filter(f=> f != '').toString();
 
-            console.log(typeTags);
-
+            console.log('testing', id, sidebox, button,typeTags);
 
             sidebox.append('h6').text(`${theData.Event} ${theData.date}`);
             sidebox.append('h5').text(`Type: ${typeTags}`);
@@ -255,7 +257,8 @@ export async function renderTimeline(traceId){
                 im.style('width', '650px')
                 .attr('y', 0)
                 .attr('x', 0)
-                .attr("xlink:href", `public/assets/${theData.Sketch_ID}.png`);
+                // .attr("xlink:href", `public/assets/${theData.Sketch_ID}.png`);
+                .attr("xlink:href", theData.embed_link);
 
             }else{
                 console.error('type not found');
