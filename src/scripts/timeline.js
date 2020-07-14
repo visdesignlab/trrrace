@@ -15,7 +15,12 @@ export async function renderTimeline(traceId){
     let timeFormat = d3.timeFormat("%m/%d/%Y");
 
     let mappedData = data.map(m=> {
-        m.date = new Date(m.Date_Range);
+
+        var myDate = m.Date_Range;
+        myDate = myDate.split("-");
+        var newDate = myDate[0]+"/"+myDate[1]+"/"+myDate[2];
+        m.date = new Date(newDate).getTime()
+      
         return m;
     });
 
