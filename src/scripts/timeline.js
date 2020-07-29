@@ -53,9 +53,6 @@ export async function renderTimeline(traceId){
     let groupedData = Array.from(d3Array.group(mappedData.filter(f=> f.tag1 != 'phase' && f.tag1 != 'event'), d => timeFormat(d.date)));
 
     let events = Array.from(d3Array.group(mappedData.filter(f=> f.tag1 === 'phase' || f.tag1 === 'event'), d => d.Event));
-   
-
-    console.log(events)
 
     let width = svg.node().getBoundingClientRect().width;
     let height = (mappedData.length * 40) + 50;
